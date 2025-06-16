@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-white">
     <div class="bg-primary py-5">
       <Container>
         <h2 class="text-xl lg:text-2xl text-white">
