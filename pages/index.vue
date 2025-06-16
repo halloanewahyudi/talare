@@ -24,7 +24,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 relative">
           <div class="">
             <img
-              src="/img/img-1.jpg"
+              src="/img/brief.jpg"
               alt=""
               class="flex rounded-xl lg:absolute lg:w-[800px] lg:h-[400px] lg:left-0 lg:-top-20 object-cover"
             />
@@ -56,7 +56,11 @@
 </template>
 
 <script lang="ts" setup>
-
+ const langActive = ref('EN')
+ const lang = ref(['EN', 'ID'])
+ const toggleLang = () => {
+   langActive.value = lang.value[lang.value.indexOf(langActive.value) + 1]
+ }
 </script>
 
 <style></style>
