@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white bg-[url('/img/footer-talare.jpg')] bg-cover bg-right">
-    <div class="bg-primary py-5">
+    <div class="bg-gradient-to-r from-blue-600 to-primary py-5">
       <Container>
         <h2 class="text-xl lg:text-2xl text-white">
           PT. TALA REINSURANCE BROKERS & CONSULTANTS
