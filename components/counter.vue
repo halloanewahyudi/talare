@@ -1,9 +1,9 @@
 <template>
   <section
     ref="counterRef"
-    class="mb-20 mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 bg-[url('/img/jakarta.jpg')] bg-cover bg-center rounded-xl overflow-hidden p-6 lg:p-10 relative"
+    class="mb-20 mt-20 grid grid-cols-1 md:grid-cols-3 gap-5 bg-[url('/img/banner-statistik.jpg')] bg-cover bg-center rounded-xl overflow-hidden p-6 lg:p-10 relative"
   >
- <div class="absolute bg-gradient-to-tr from-primary/40 to-primary/60 inset-0"></div>
+ 
     <div
       v-for="(item, i) in counterItems"
       :key="item.label"
@@ -27,9 +27,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const counterItems = ref([
   { label: 'Year of Experience', value: 17 },
-  { label: 'Innovation/Formula', value: 100 },
-  { label: 'Brainers Generated', value: 99 },
-  { label: 'Event', value: 100 }
+  { label: 'Strategic Partners', value: 10 },
+  { label: 'Subject Matter Expert', value: 10 },
 ])
 
 const counters = ref<HTMLElement[]>([])

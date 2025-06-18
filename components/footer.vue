@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white">
+  <div class="bg-white bg-[url('/img/footer-talare.jpg')] bg-cover bg-right">
     <div class="bg-primary py-5">
       <Container>
         <h2 class="text-xl lg:text-2xl text-white">
@@ -8,7 +8,7 @@
       </Container>
     </div>
     <Container>
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10 text-sm py-10">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-10 text-sm py-10">
 
         <div class="flex flex-col gap-3"> <!-- col 1 -->
           <h4 class="text-lg font-semibold mb-1">Address</h4>
@@ -42,7 +42,7 @@
           </div>
         </div>
         <div class="flex flex-col justify-center items-center">
-          <img src="/img/logo.png" alt="">
+          <img src="/img/logo.png" alt="" class="h-16">
         </div>
       </div>
     </Container>
