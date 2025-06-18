@@ -1,5 +1,5 @@
 <template>
-  <div class="py-2 flex flex-col gap-4 " :class="{ 'sticky top-0 z-50 border-b border-gray-200 bg-white': isSticky }">
+  <div class="py-2 flex flex-col gap-4 " :class="{ 'sticky top-0 z-50 bg-white lg:bg-transparent': isSticky }">
     <Container  :class="{ 'lg:hidden lg:opacity-0 duration-300 transition-all ease-in-out': isSticky }">
       <div class="flex justify-between items-center ">
         <NuxtLink to="/">
@@ -13,22 +13,26 @@
 
     <!-- Sticky nav -->
     <div
-      class="navbar sticky top-0 z-50 bg-white duration-300  lg:block"
-      :class="[{ 'bg-white ': isSticky }, mobileMenu ? 'block opacity-100' : 'hidden']"
+      class="navbar sticky top-0 z-50  duration-300  lg:block"
+      :class="[ mobileMenu ? 'block opacity-100' : 'hidden']"
     >
       <Container>
-        <nav class=" flex flex-col lg:flex-row lg:items-center  w-full  gap-6 lg:gap-10  py-2">
+        <nav class="menu flex flex-col lg:flex-row lg:items-center  w-full  gap-6 lg:gap-10  py-3 bg-gradient-to-b from-red-600 to-secondary rounded-xl px-6">
           <ul class="flex flex-col gap-2 lg:flex-row lg:items-center justify-between w-full">
-            <li v-for="menu in menus" :key="menu.path">
-              <NuxtLink :to="menu.path" class="nav-link mx-2 font-semibold text-neutral-700 hover:text-primary">
-                {{ menu.name }}
+            <li v-for="menu in menus" :key="menu.path" class="group relative">
+              <NuxtLink :to="menu.path" class="nav-link mx-2 font-medium text-white hover:text-primary group">
+                {{ menu.name }} <span v-if="menu.children"><Icon name="bi:caret-down-fill" class="text-sm mt-2 group-hover:rotate-180 duration-300" /> </span>
               </NuxtLink>
+              <ul v-if="menu.children" class=" sub-menu ">
+                <li v-for="child in menu.children" :key="child.path">
+                  <NuxtLink :to="child.path" class="nav-link mx-2 font-medium text-white hover:text-primary">
+                    {{ child.name }}
+                  </NuxtLink>
+                </li>
+              </ul>
             </li>
           </ul>
-           <div class="flex items-center max-w-max divide-x divide-gray-300 border border-gray-300 rounded-xl overflow-hidden shrink-0">
-          <button class="active p-2 text-primary cursor-pointer text-sm hover:text-white hover:bg-primary duration-300">EN</button>
-          <button class="p-2 text-secondary cursor-pointer text-sm hover:text-white hover:bg-secondary duration-300">ID</button>
-        </div>
+
         </nav>
       </Container>
     </div>
@@ -52,13 +56,25 @@ onMounted(() => {
 <style scoped>
 @reference "tailwindcss";
 .nav-link {
-  @apply relative py-2;
+  @apply relative py-1 px-3 flex items-center gap-2 text-white/90;
 }
-.nav-link::after {
+.nav-link:hover,
+.menu .router-link-active  {
+  @apply bg-red-900/30   text-white rounded-full duration-300 ease-in-out flex items-center gap-2;
+}
+.router-link-active::after {
   content: "";
-  @apply w-0 h-0.5 absolute bottom-0 left-0 bg-[var(--color-secondary)];
+  @apply w-2 h-2 bg-[var(--color-primary)] rounded-full;
 }
-.nav-link:hover::after {
-  @apply w-full duration-300 ease-in-out;
+
+.sub-menu {
+  @apply absolute hidden top-10 group-hover:top-full group-hover:block  bg-[var(--color-secondary)]  text-white rounded-b-xl duration-300 ease-in-out lg:w-[200px]  p-4 ;
+}
+.sub-menu .nav-link{
+  @apply px-0 py-2 text-sm text-white/80;
+}
+.sub-menu .nav-link:hover {
+  @apply bg-transparent inline-flex text-white ;
+  
 }
 </style>

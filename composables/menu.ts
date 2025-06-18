@@ -7,6 +7,16 @@ export const useMenu = () => {
     {
       name: 'About',
       path: '/about',
+      children: [
+        {
+          name: 'Company Overview',
+          path: '/about/company-overview',
+        },
+        {
+          name: 'Our Management',
+          path: '/about/management',
+        }
+      ]
     },
      {
       name: 'Products',
