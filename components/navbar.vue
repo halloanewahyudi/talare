@@ -1,9 +1,9 @@
 <template>
   <div class="py-2 flex flex-col gap-4 " :class="{ 'sticky top-0 z-50 bg-white lg:bg-transparent': isSticky }">
     <Container  :class="{ 'lg:hidden lg:opacity-0 duration-300 transition-all ease-in-out': isSticky }">
-      <div class="flex justify-between items-center ">
-        <NuxtLink to="/">
-          <img src="/img/logo.png" alt="logo" class="h-7 lg:h-10 shrink-0 object-contain" />
+      <div class="flex justify-between items-center">
+        <NuxtLink to="/" class="flex items-center gap-2">
+          <img src="/img/logo.png" alt="logo" class="h-7 lg:h-10 shrink-0 object-contain" /> <p>Reinsurance Brokers & Consultants</p>
         </NuxtLink>
        
        <img src="/img/logoipsum.svg" alt="logo" class="h-5 lg:h-8 shrink-0 object-contain " />
@@ -17,10 +17,10 @@
       :class="[ mobileMenu ? 'block opacity-100' : 'hidden']"
     >
       <Container>
-        <nav class="menu flex flex-col lg:flex-row lg:items-center  w-full  gap-6 lg:gap-10  py-3 bg-gradient-to-b from-red-600 to-secondary rounded-xl px-6">
+        <nav class="menu relative flex flex-col lg:flex-row lg:items-center  w-full  gap-6 lg:gap-10  bg-gradient-to-b from-blue-500 to-primary rounded-xl px-6 ring-2 ring-blue-400">
           <ul class="flex flex-col gap-2 lg:flex-row lg:items-center justify-between w-full">
             <li v-for="menu in menus" :key="menu.path" class="group relative">
-              <NuxtLink :to="menu.path" class="nav-link mx-2 font-medium text-white hover:text-primary group">
+              <NuxtLink :to="menu.path" class="nav-link w-full font-medium text-white hover:text-primary group">
                 {{ menu.name }} <span v-if="menu.children"><Icon name="bi:caret-down-fill" class="text-sm mt-2 group-hover:rotate-180 duration-300" /> </span>
               </NuxtLink>
               <ul v-if="menu.children" class=" sub-menu ">
@@ -45,7 +45,7 @@ const mobileMenu = ref(false);
 
 onMounted(() => {
   const handleScroll = () => {
-    isSticky.value = window.scrollY > 50;
+    isSticky.value = window.scrollY > 100;
   };
   window.addEventListener("scroll", handleScroll);
   onBeforeUnmount(() => window.removeEventListener("scroll", handleScroll));
@@ -56,19 +56,20 @@ onMounted(() => {
 <style scoped>
 @reference "tailwindcss";
 .nav-link {
-  @apply relative py-1 px-3 flex items-center gap-2 text-white/90;
+  @apply relative p-3 flex items-center gap-2 text-white/85 hover:text-white duration-300 ease-in-out;
 }
-.nav-link:hover,
+
+
 .menu .router-link-active  {
-  @apply bg-red-900/30   text-white rounded-full duration-300 ease-in-out flex items-center gap-2;
+  @apply bg-gradient-to-b  text-white duration-300 ease-in-out flex  items-center gap-2;
 }
 .router-link-active::after {
   content: "";
-  @apply w-2 h-2 bg-[var(--color-primary)] rounded-full;
+  @apply w-2 h-2 bg-[var(--color-secondary)] rounded-full;
 }
 
 .sub-menu {
-  @apply absolute hidden top-10 group-hover:top-full group-hover:block  bg-[var(--color-secondary)]  text-white rounded-b-xl duration-300 ease-in-out lg:w-[200px]  p-4 ;
+  @apply absolute hidden top-full group-hover:top-full group-hover:block  bg-[var(--color-primary)]  text-white rounded-b-xl duration-300 ease-in-out lg:w-[200px]  p-4 pt-0 ;
 }
 .sub-menu .nav-link{
   @apply px-0 py-2 text-sm text-white/80;

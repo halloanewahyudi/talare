@@ -18,9 +18,12 @@
       <section
         class="mb-20 flex flex-col lg:gap-20 bg-gray-100 p-6 lg:p-0 lg:bg-transparent rounded-xl lg:rounded-none"
       >
-        <h2 class="text-2xl lg:text-4xl font-bold text-primary mb-5">
-          A Brief of Talare
-        </h2>
+        <GsapFadeUp>
+          <h2 class="text-2xl lg:text-4xl font-bold text-primary mb-5">
+            A Brief of Talare
+          </h2>
+        </GsapFadeUp>
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 relative">
           <div class="">
             <img
@@ -29,7 +32,7 @@
               class="flex rounded-xl lg:absolute lg:w-[800px] lg:h-[400px] lg:left-0 lg:-top-20 object-cover"
             />
           </div>
-
+   <GsapFadeUp>
           <div
             class="relative p-6 lg:p-10 rounded-xl bg-white flex flex-col gap-5 border border-neutral-200 lg:shadow-2xl h-max"
           >
@@ -46,6 +49,7 @@
             </p>
             <NuxtLink to="/" class="btn btn-primary self-end">Read More</NuxtLink>
           </div>
+          </GsapFadeUp>
         </div>
       </section>
 
@@ -56,11 +60,11 @@
 </template>
 
 <script lang="ts" setup>
- const langActive = ref('EN')
- const lang = ref(['EN', 'ID'])
- const toggleLang = () => {
-   langActive.value = lang.value[lang.value.indexOf(langActive.value) + 1]
- }
+const langActive = ref("EN");
+const lang = ref(["EN", "ID"]);
+const toggleLang = () => {
+  langActive.value = lang.value[lang.value.indexOf(langActive.value) + 1];
+};
 </script>
 
 <style></style>

@@ -3,18 +3,23 @@ export const useMenu = () => {
     {
       name: 'Home',
       path: '/',
+    
     },
     {
       name: 'About',
-      path: '/about',
+      path: '#',
       children: [
         {
-          name: 'Company Overview',
-          path: '/about/company-overview',
+          name: 'About Talare',
+          path: '/about',
+        },
+        {
+          name: 'Vision & Mission',
+          path: '/vision-mission',
         },
         {
           name: 'Our Management',
-          path: '/about/management',
+          path: '/management',
         }
       ]
     },
