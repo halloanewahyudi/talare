@@ -6,10 +6,11 @@
     <section class="py-16">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
       <div v-for="item in management" :key="item.name">
-      <UiCover :title="item.name" :image="item.image" :height="420" :image-opacity="80" >
+      <NuxtLink :to="'/management/'+item.id" >
+        <UiCover :title="item.name" :image="item.image" :height="420" :image-opacity="80" >
         <p>{{ item.position }}</p>
       </UiCover>
-    
+      </NuxtLink> 
       </div>
     </div>
     </section>

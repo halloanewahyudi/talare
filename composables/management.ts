@@ -1,6 +1,7 @@
 export const useManagement = () => {
  const management = ref([
    {
+    id:1,
     name:'Kapler A. Marpaung, SE, M.Min, AAIK, CIIB, CWM, CRGP, ANZIIF (Snr. Assoc.) CIP, MWM, RFS,FMII',
     position:'President Director',
     image:'https://talare.co.id/wp-content/uploads/2021/09/Kapler-1-600x343.jpg',
@@ -15,12 +16,14 @@ Education Degrees are Bachelor of Economics (SE) at Sekolah Tinggi Ilmu Ekonomi 
 <p>Kapler is currently also actively writing articles in newspapers or magazines about economic developments.</p>`,
    },
    {
+    id:2,
     name:'M. Saut Simorangkir, APAI, CIIB.',
     position:'Director',
     image:'https://talare.co.id/wp-content/uploads/2021/09/saut-300x438.jpg',
     bio:`<p>Saut has been working for insurance and reinsurance industry for 24 years. Currently, He is a Director at PT. Tala  Reinsurance Brokers and Consultants. Saut joined with PT. Asrinda Arthasangga Reinsurance Brokers for 13 years until September 2010 with last position as technical division before joined with PT. Tala Reinsurance Brokers and Consultants. He was as Senior Manager at PT. Tala Reinsurance Brokers and Consultants from 2010 up to 2018 and from 2018 up to present He is as Director. In total Saut has 23 years working experience in reinsurance brokers company at technical division for facultative and treaty business. Otherwise, Saut also a holder of professional qualification as Indonesian Insurance (APAI) and Reinsurance Brokers Expert and Certified of Indonesian Insurance & Reinsurance Broker (CIIB) from the Association of Indonesian Qualified Insurance and Reinsurance Brokers.</p>`,  
    },
    {
+    id:3,
     name:'Hendrik S Nadapdap, MM, LUF, APAI, CIIB',
     position:'Chief Operating Officer',
     image:'https://talare.co.id/wp-content/uploads/2025/05/FOTO-PAK-HENDRIK-300x400.jpg',

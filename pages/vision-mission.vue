@@ -2,8 +2,8 @@
   <div>
     <Container>
       <UiPageHader
-        title="Visi dan Misi"
-        subtitle="Informasi tentang halaman About"
+        title="Vision & Mission"
+        subtitle="Information about the Vision & Mission"
         bg="./img/bg-hero.jpg"
       />
       <div class="pt-16">
