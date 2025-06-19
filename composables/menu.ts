@@ -1,4 +1,6 @@
 export const useMenu = () => {
+
+  const {productMenu} = useProductMenu();
   const menus = ref([
     {
       name: 'Home',
@@ -25,7 +27,7 @@ export const useMenu = () => {
     },
      {
       name: 'Products',
-      path: '/products',
+      path: productMenu.value[0].path,
     },
     {
       name: 'Services',

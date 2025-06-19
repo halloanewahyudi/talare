@@ -3,7 +3,7 @@
     <Container  :class="{ 'lg:hidden lg:opacity-0 duration-300 transition-all ease-in-out': isSticky }">
       <div class="flex justify-between items-center">
         <NuxtLink to="/" class="flex items-center gap-2">
-          <img src="/img/logo.png" alt="logo" class="h-7 lg:h-10 shrink-0 object-contain" /> <p>Reinsurance Brokers & Consultants</p>
+          <img src="/img/logo.png" alt="logo" class="h-7 lg:h-10 shrink-0 object-contain" /> <span class="hidden lg:block">Reinsurance Brokers & Consultants</span>
         </NuxtLink>
        
        <img src="/img/logoipsum.svg" alt="logo" class="h-5 lg:h-8 shrink-0 object-contain " />
@@ -17,20 +17,50 @@
       :class="[ mobileMenu ? 'block opacity-100' : 'hidden']"
     >
       <Container>
-        <nav class="menu relative flex flex-col lg:flex-row lg:items-center  w-full  gap-6 lg:gap-10  bg-gradient-to-b from-blue-500 to-primary rounded-xl px-6 ring-2 ring-blue-400">
+        <nav class="menu relative flex flex-col lg:flex-row lg:items-center  w-full  gap-6 lg:gap-10  bg-gradient-to-b from-blue-500 to-primary rounded-xl py-6 px-6 lg:py-0 ring-2 ring-blue-400">
           <ul class="flex flex-col gap-2 lg:flex-row lg:items-center justify-between w-full">
             <li v-for="menu in menus" :key="menu.path" class="group relative">
-              <NuxtLink :to="menu.path" class="nav-link w-full font-medium text-white hover:text-primary group">
-                {{ menu.name }} <span v-if="menu.children"><Icon name="bi:caret-down-fill" class="text-sm mt-2 group-hover:rotate-180 duration-300" /> </span>
-              </NuxtLink>
-              <ul v-if="menu.children" class=" sub-menu ">
-                <li v-for="child in menu.children" :key="child.path">
-                  <NuxtLink :to="child.path" class="nav-link mx-2 font-medium text-white hover:text-primary">
-                    {{ child.name }}
-                  </NuxtLink>
-                </li>
-              </ul>
-            </li>
+  <div
+    class="flex items-center justify-between w-full lg:w-auto"
+    @click="menu.children && toggleDropdown(menu.path)"
+  >
+    <NuxtLink
+      :to="menu.path"
+      class="nav-link w-full font-medium text-white hover:text-primary group"
+    >
+      {{ menu.name }}
+    </NuxtLink>
+
+    <span v-if="menu.children" class="lg:mt-2">
+      <Icon name="bi:caret-down-fill"
+        class="transition-transform duration-300 text-white"
+        :class="{ 'rotate-180': activeDropdown === menu.path }"
+      />
+    </span>
+  </div>
+
+  <!-- Submenu -->
+  <ul
+    v-if="menu.children"
+    class="lg:absolute lg:top-full sub-menu"
+    :class="{
+      'sub-menu-open': activeDropdown === menu.path,
+      'hidden': activeDropdown !== menu.path,
+      'lg:block lg:mt-0': true
+    }"
+  >
+    <li v-for="child in menu.children" :key="child.path">
+      <NuxtLink
+        :to="child.path"
+        class="nav-link text-sm mx-2 text-white hover:text-primary"
+        @click="mobileMenu = false"
+      >
+        {{ child.name }}
+      </NuxtLink>
+    </li>
+  </ul>
+</li>
+
           </ul>
 
         </nav>
@@ -51,30 +81,38 @@ onMounted(() => {
   onBeforeUnmount(() => window.removeEventListener("scroll", handleScroll));
 });
 
+const activeDropdown = ref<string | null>(null);
+
+const toggleDropdown = (path: string) => {
+  activeDropdown.value = activeDropdown.value === path ? null : path;
+};
+
 
 </script>
 <style scoped>
 @reference "tailwindcss";
 .nav-link {
-  @apply relative p-3 flex items-center gap-2 text-white/85 hover:text-white duration-300 ease-in-out;
+  @apply relative lg:p-3 flex items-center gap-2 text-white/85 hover:text-white duration-300 ease-in-out;
 }
-
-
 .menu .router-link-active  {
   @apply bg-gradient-to-b  text-white duration-300 ease-in-out flex  items-center gap-2;
 }
+
 .router-link-active::after {
   content: "";
   @apply w-2 h-2 bg-[var(--color-secondary)] rounded-full;
 }
 
 .sub-menu {
-  @apply absolute hidden top-full group-hover:top-full group-hover:block  bg-[var(--color-primary)]  text-white rounded-b-xl duration-300 ease-in-out lg:w-[200px]  p-4 pt-0 ;
+  @apply relative lg:absolute hidden top-full group-hover:top-full group-hover:flex flex-col gap-2 lg:bg-[var(--color-primary)]  text-white rounded-b-xl duration-300 ease-in-out lg:w-[200px]  lg:p-4  ;
+}
+.sub-menu-open {
+  @apply block;
 }
 .sub-menu .nav-link{
-  @apply px-0 py-2 text-sm text-white/80;
+  @apply p-0  text-sm text-white/80;
 }
-.sub-menu .nav-link:hover {
+.sub-menu a {
   @apply bg-transparent inline-flex text-white ;
   
 }
