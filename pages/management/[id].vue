@@ -4,19 +4,15 @@
       <section class="pb-16">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
           <div class="lg:col-span-1">
-          <div class=" px-6 lg:px-16">
-            <UiCover
-              :title="item.name"
-              :image="item.image"
-              :height="240"
-              :image-opacity="80"
-              class="border-4 border-gray-400"
-            >
-              <p>{{ item.position }}</p>
-            </UiCover>
+            <div class=" px-6 lg:px-16">
+              <img
+                :src="item.image"
+                alt=""
+                class="w-full h-[260px] object-cover rounded-xl border border-neutral-400 shadow-xl"
+              />
+            </div>
           </div>
-          
-          </div>
+
           <div class="lg:col-span-2">
             <h4 class="text-2xl lg:text-primary lg:text-4xl font-bold mb-3">
               {{ item.name }}
@@ -28,10 +24,11 @@
 
       <section>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10">
-          <div v-for="manager in management"
-            :key="manager.id"
-          >
-            <NuxtLink :to="'/management/' + manager.id"  class="flex gap-2 bg-white p-4 rounded-xl border border-gray-200 h-full hover:shadow-xl duration-300">
+          <div v-for="manager in management" :key="manager.id">
+            <NuxtLink
+              :to="'/management/' + manager.id"
+              class="flex gap-2 bg-white p-4 rounded-xl border border-gray-200 h-full hover:shadow-xl duration-300"
+            >
               <img
                 :src="manager.image"
                 alt=""
