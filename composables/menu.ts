@@ -22,6 +22,10 @@ export const useMenu = () => {
         {
           name: 'Our Management',
           path: '/management',
+        },
+        {
+          name: 'Our Team',
+          path: '#',
         }
       ]
     },
@@ -31,19 +35,19 @@ export const useMenu = () => {
     },
     {
       name: 'Services',
-      path: '/services',
+      path: '#',
     },
     {
       name: 'Clients & Strategic Partners',
-      path: '/clients',
+      path: '#',
     },
     {
       name: 'Gallery',
-      path: '/gallery',
+      path: '#',
     },
     {
       name: 'Contact',
-      path: '/contact',
+      path: '#',
     },
   ])
   return {
