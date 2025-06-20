@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div >
   <Navbar />
+  <div class="min-h-screen">
     <Container>
    <!--  <UiPageHader title="Products" subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit." bg="./img/talare-slider1.jpg" class="mt-10"/> -->
       <section class="py-16">
@@ -13,6 +14,7 @@
       </section>
     
     </Container>
+    </div>
     <Footer/>
   </div>
 </template>

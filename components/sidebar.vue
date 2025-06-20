@@ -6,9 +6,11 @@
           v-for="(menu, index) in productMenu"
           :key="index"
           class="py-2 pr-6 pl-8 relative"
+          :class="{
+            'bg-gradient-to-b from-neutral-100 via-white to-neutral-200': menu.slug == route.params.slug,
+          }"
         >
         <Icon v-if="menu.slug == route.params.slug" name="iconoir:arrow-right-circle-solid" class=" text-secondary absolute left-2" />
-       
           <NuxtLink :to="menu.slug" class="hover:text-primary">
             {{ menu.name }}
           </NuxtLink>

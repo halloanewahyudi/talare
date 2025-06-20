@@ -1,7 +1,7 @@
 <template>
   <div>
     <Container>
-     <UiPageHader title="About" subtitle="Information about the About page" bg="./img/talare-slider1.jpg"/>
+     <UiPageHader title="About" subtitle="Information about the About page" bg="./img/about.jpg"/>
 
     <section class="py-10">
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos sint dicta id minus facilis veritatis laboriosam quia in saepe aut pariatur delectus optio, maxime animi incidunt quisquam dolore. Molestiae, fugit.</p>

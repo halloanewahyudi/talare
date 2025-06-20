@@ -4,7 +4,7 @@
       <UiPageHader
         title="Vision & Mission"
         subtitle="Information about the Vision & Mission"
-        bg="./img/bg-hero.jpg"
+        bg="./img/visi-misi.jpg"
       />
       <div class="pt-16">
         <UiBoxImageLeft
