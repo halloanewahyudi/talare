@@ -14,7 +14,7 @@
             <div class="flex gap-1">
               <Icon name="simple-line-icons:location-pin" class="text-xl" />
               <span class="text-sm">
-                Graha Mustika Ratu, 6th Floor Jl. Gatot Subroto Kav. 74-75 Jakarta 12870
+                Graha Mustika Ratu, 6th Floor <br> Jl. Gatot Subroto Kav. 74-75 <br> Jakarta 12870
               </span>
             </div>
           </div>
