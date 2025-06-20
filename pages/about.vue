@@ -9,11 +9,15 @@
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 py-10">
     <div class="">
-      <img src="/img/talare-slider1.jpg" alt="" class="w-full h-[300px] object-cover rounded-xl mb-3">
+       <div class="h-[300px] w-full overflow-hidden rounded-xl mb-3">
+     <img src="/img/talare-slider1.jpg" alt="" class="w-full h-[300px] object-cover hover:scale-110 duration-300">
+     </div>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, cumque.</p>
     </div>
    <div class="">
-      <img src="/img/bg-hero.jpg" alt="" class="w-full h-[300px] object-cover rounded-xl mb-3">
+     <div class="h-[300px] w-full overflow-hidden rounded-xl mb-3">
+     <img src="/img/bg-hero.jpg" alt="" class="w-full h-[300px] object-cover hover:scale-110 duration-300">
+     </div>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, consectetur.</p>
     </div>
   

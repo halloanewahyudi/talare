@@ -36,8 +36,6 @@
           :src="item.image"
           class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-300 group-hover:scale-110 opacity-40 group-hover:opacity-80" 
         />
-
-  
         <!-- Content --> 
         <div class="absolute bottom-0 p-4 z-20 text-white transition-all duration-300">
           <h4 class="text-xl font-bold text-white">{{ item.title }}</h4>
