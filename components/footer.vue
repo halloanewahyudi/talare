@@ -41,7 +41,7 @@
 
     <div class="bg-neutral-400/60 border-t border-neutral-400/80 py-2 text-neutral-500 text-center text-sm">
       <Container>
-        <span class="text-center text-sm">
+        <span class="text-center text-xs">
           Copyright &copy 2025. PT.Tala Reinsurance Brokers & Consultants. All Rights
           Reserved Developed by Proweb Indonesia
         </span>
