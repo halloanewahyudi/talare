@@ -13,6 +13,7 @@
       </section>
     
     </Container>
+    <Footer/>
   </div>
 </template>
 
