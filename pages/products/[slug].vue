@@ -7,6 +7,8 @@
      <img src="/img/talare-slider1.jpg" alt="" class="h-[300px] object-cover w-full rounded-xl mb-5 ">
      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus odio voluptate, cupiditate accusamus eius distinctio doloremque voluptatibus facere sit consectetur eveniet iusto, aliquam adipisci? Repellendus et reprehenderit perspiciatis doloremque non.</p>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis nulla excepturi ipsam a fugit hic magni nesciunt numquam aperiam officia dignissimos, ut laborum quam explicabo reiciendis, soluta molestias deleniti minima!</p>
+  
+    
      </section>
   </div>
 </template>

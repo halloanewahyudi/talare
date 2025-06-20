@@ -34,7 +34,7 @@ export const useMenu = () => {
       path: '/services',
     },
     {
-      name: 'Clients & Strategic Pratners',
+      name: 'Clients & Strategic Partners',
       path: '/clients',
     },
     {

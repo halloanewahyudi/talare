@@ -15,7 +15,7 @@
             alt="logo"
             class="h-7 lg:h-10 shrink-0 object-contain"
           />
-          <span class="hidden lg:block">Reinsurance Brokers & Consultants</span>
+         
         </NuxtLink>
 
         <img
@@ -122,7 +122,7 @@ const toggleDropdown = (path: string) => {
   @apply bg-gradient-to-b  text-gray-800 duration-300 ease-in-out flex  items-center gap-2;
 }
 
-.router-link-active::after {
+.menu .router-link-active::before {
   content: "";
   @apply w-2 h-2 bg-[var(--color-secondary)] rounded-full;
 }
