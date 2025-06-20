@@ -15,7 +15,7 @@
              <img
                 :src="item.image"
                 alt=""
-                class="w-full h-[380px] object-cover"
+                class="w-full h-[380px] object-cover group-hover:scale-110 duration-300"
               />
             </div>
              
