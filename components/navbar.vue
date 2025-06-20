@@ -87,7 +87,7 @@
               </ul>
             </li>
             <li><a href="linkedin.com" class="flex items-center gap-2"><Icon name="mdi:linkedin" class="text-2xl" /></a></li>
-          <li><a href="x.com" class="flex items-center gap-2"><Icon name="bi:twitter-x" class="text-xl" /></a></li>
+          <li><a href="x.com" class="flex items-center gap-2"><Icon name="line-md:twitter-x" class="text-xl" /></a></li>
           </ul>
         </nav>
       </Container>
