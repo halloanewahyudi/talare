@@ -39,7 +39,7 @@
     >
       <Container>
         <nav
-          class="menu relative flex flex-col lg:flex-row lg:items-center w-full gap-6 lg:gap-10 bg-gradient-to-b from-neutral-100 to-neutral-300 rounded-xl py-6 px-6 lg:py-0 ring-2 ring-neutral-300"
+          class="menu relative flex flex-col lg:flex-row lg:items-center w-full gap-6 lg:gap-10 bg-gradient-to-b from-neutral-100 to-neutral-300 rounded py-6 px-6 lg:py-0 ring-2 ring-neutral-300"
         >
           <ul
             class="flex flex-col gap-2 lg:flex-row lg:items-center justify-between w-full"
