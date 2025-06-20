@@ -16,7 +16,7 @@ onMounted(() => {
     el.value,
     {
       opacity: 0,
-      y: 60,
+      y: 100,
     },
     {
       opacity: 1,
@@ -27,7 +27,7 @@ onMounted(() => {
       scrollTrigger: {
         trigger: el.value,
         start: 'top 80%',
-        toggleActions: 'play none none none',
+        toggleActions: 'play none',
       },
     }
   )
