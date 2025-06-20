@@ -9,7 +9,7 @@
     </div>
     <div class="py-4 bg-neutral-300">
       <Container>
-        <div class="flex gap-6 lg:gap-10 items-center justify-between">
+        <div class="flex flex-wrap gap-6 lg:gap-10 items-center justify-between">
           <div class="max-w-[300px] shrink-0 w-full">
             <div class="flex gap-1">
               <Icon name="simple-line-icons:location-pin" class="text-xl" />
