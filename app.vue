@@ -5,7 +5,7 @@
     </NuxtLayout> -->
     <div class="flex flex-col justify-center items-center p-6 min-h-screen">
       <div class="max-w-md w-full text-center">
-        <h1 class="text-4xl lg:text-8xl font-bold word text-primary">Sorry..!</h1>
+        <h1 class="text-4xl lg:text-8xl font-extrabold word text-primary">SORRY..!</h1>
         <p class="text-xl word">this website is under development</p>
       </div>
     </div>
@@ -21,14 +21,14 @@ onMounted(() => {
     skewY: 10,
     opacity: 0,
     filter: "blur(10px)", // blur awal
-    duration: 0.8,
+    duration:1,
     ease: "elastic.out(1, 0.5)", // jelly effect
     stagger: 0.2,
     onUpdate: function () {
       // Untuk memastikan efek blur ikut transisi
       gsap.to(".word", {
         filter: "blur(0px)", // blur hilang saat animasi jalan
-        duration: 0.3,
+        duration: 0.5,
         ease: "power1.out",
         overwrite: "auto",
       });
