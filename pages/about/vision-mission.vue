@@ -2,24 +2,23 @@
   <div>
     <Container>
       <UiPageHader
-        title="Vision & Mission"
-        subtitle="Information about the Vision & Mission"
-        bg="./img/visi-misi.jpg"
+        :title="visimisi.title"
+        :subtitle="visimisi.acf.sub_title"
+        :bg="visimisi.featured_image"
       />
+
       <div class="pt-16">
         <UiBoxImageLeft
           title="Vision"
-          description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-"
-          image="./img/brief.jpg"
+          :description="visimisi.acf.vision.vision"
+          :image="visimisi.acf.vision.image['url']"
         ></UiBoxImageLeft>
       </div>
       <div class="py-16">
         <UiBoxImageRight
           title="Mission"
-          description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-"
-          image="./img/brief.jpg"
+        :description="visimisi.acf.mission.description"
+          :image="visimisi.acf.mission.image['url']"
         ></UiBoxImageRight>
       </div>
 
@@ -50,6 +49,12 @@
   </div>
 </template>
 <script lang="ts" setup>
+//  fetch data visi misi
+const baseUrl = useRuntimeConfig().public.baseUrl;
+ const { data: visimisi, pending, error, refresh } = await useFetch(baseUrl+'/api/v1/content/vision-mission',{
+    
+})
+
 const activeIndex = ref<number | null>(null);
 
 const setActive = (index: number) => {
@@ -60,22 +65,22 @@ const coreValue = ref([
   {
     title: "Value 1",
     subtitle: "Lorem Ipsum has been the industry",
-    image: "./img/brief.jpg",
+    image: "../img/brief.jpg",
   },
   {
     title: "Value 2",
     subtitle: "Lorem Ipsum has been the industry",
-    image: "./img/brief.jpg",
+    image: "../img/brief.jpg",
   },
   {
     title: "Value 3",
     subtitle: "Lorem Ipsum has been the industry",
-    image: "./img/brief.jpg",
+    image: "../img/brief.jpg",
   },
   {
     title: "Value 4",
     subtitle: "Lorem Ipsum has been the industry",
-    image: "./img/brief.jpg",
+    image: "../img/brief.jpg",
   },
 ]);
 </script>

@@ -6,7 +6,7 @@
     <div class="absolute inset-0 bg-gradient-to-tr from-black/75 to-transparent"></div>
     <div class="relative">
       <h1 class="text-4xl lg:text-6xl font-bold text-white">
-        <span class="font-light"> {{ props.title }} </span>
+        <span class="font-light" v-html="props.title"> </span>
       </h1>
       <p>{{ props.subtitle }}</p>
     </div>

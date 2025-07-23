@@ -17,11 +17,11 @@ export const useMenu = () => {
         },
         {
           name: 'Vision & Mission',
-          path: '/vision-mission',
+          path: '/about/vision-mission',
         },
         {
           name: 'Our Management',
-          path: '/management',
+          path: '/about/management',
         },
         {
           name: 'Our Team',

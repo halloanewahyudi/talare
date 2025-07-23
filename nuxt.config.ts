@@ -5,6 +5,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
 
+  runtimeConfig: {
+    public: {
+      baseUrl: process.env.WP_BASE_URL || 'http://localhost:3000',
+    },
+  },
+
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
   },
