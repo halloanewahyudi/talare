@@ -57,6 +57,7 @@ const baseUrl = useRuntimeConfig().public.baseUrl;
 const { data: person, pending, error, refresh } = await useFetch(baseUrl+'/api/v1/content/'+route.params.slug);
 
 const { data:managers, pending:managersPending, error:managersError, refresh:managersRefresh } = await useFetch(baseUrl+'/api/v1/posts/management')
+
 </script>
 
 <style></style>

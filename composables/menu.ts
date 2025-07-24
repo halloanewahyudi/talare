@@ -25,7 +25,7 @@ export const useMenu = () => {
         },
         {
           name: 'Our Team',
-          path: '#',
+          path: '/about/team',
         }
       ]
     },
