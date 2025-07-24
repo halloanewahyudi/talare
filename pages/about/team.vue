@@ -26,7 +26,7 @@
               }"
             >
               <div
-                class="absolute inset-0 bg-gradient-to-tr from-black/45 to-transparent"
+                class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent"
               ></div>
               <div class="text-white relative z-10">
                 <h4 class="font-semibold text-white text-sm">{{ item.title }}</h4>

@@ -19,6 +19,7 @@
           title="Mission"
         :description="visimisi.acf.mission.description"
           :image="visimisi.acf.mission.image['url']"
+          class="mission"
         ></UiBoxImageRight>
       </div>
 
