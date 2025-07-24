@@ -15,12 +15,14 @@
         ></UiBoxImageLeft>
       </div>
       <div class="py-16">
+   
         <UiBoxImageRight
           title="Mission"
         :description="visimisi.acf.mission.description"
           :image="visimisi.acf.mission.image['url']"
           class="mission"
         ></UiBoxImageRight>
+       
       </div>
 
       <div class="mb-16">
@@ -39,7 +41,7 @@
         <!-- Content --> 
         <div class="absolute bottom-0 p-4 z-20 text-white transition-all duration-300">
           <h4 class="text-xl font-bold text-white">{{ item.title }}</h4>
-          <p class="text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <p class="text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute group-hover:relative w-full ">
             {{ item.subtitle }}
           </p>
         </div>
@@ -50,6 +52,7 @@
   </div>
 </template>
 <script lang="ts" setup>
+
 //  fetch data visi misi
 const baseUrl = useRuntimeConfig().public.baseUrl;
  const { data: visimisi, pending, error, refresh } = await useFetch(baseUrl+'/api/v1/content/vision-mission',{
@@ -62,28 +65,36 @@ const setActive = (index: number) => {
   activeIndex.value = activeIndex.value === index ? null : index;
 };
 
+
 const coreValue = ref([
   {
-    title: "Value 1",
-    subtitle: "Lorem Ipsum has been the industry",
+    title: "Trust",
+    subtitle: "We believe in building enduring relationships with our clients and partners, founded on transparency and mutual respect.",
     image: "../img/brief.jpg",
   },
   {
-    title: "Value 2",
-    subtitle: "Lorem Ipsum has been the industry",
+    title: "Excellence",
+    subtitle: "Quality is at the core of everything we do. We strive to exceed expectations by delivering innovative and effective solutions.",
     image: "../img/brief.jpg",
   },
   {
-    title: "Value 3",
-    subtitle: "Lorem Ipsum has been the industry",
+    title: "Collaboration",
+    subtitle: "By fostering a culture of collaboration—both internally and externally—we empower our clients and partners to achieve shared success.",
     image: "../img/brief.jpg",
   },
   {
-    title: "Value 4",
-    subtitle: "Lorem Ipsum has been the industry",
+    title: "Sustainability",
+    subtitle: "We are committed to contributing to the sustainable growth of the insurance and reinsurance industry in Indonesia by promoting sound practices and embracing responsible business strategies.",
+    image: "../img/brief.jpg",
+  },
+   {
+    title: "Empowerment",
+    subtitle: "Through knowledge-sharing and capacity-building initiatives, we empower our clients to make informed decisions and navigate risks confidently. ",
     image: "../img/brief.jpg",
   },
 ]);
+
+
 </script>
 
 
@@ -95,6 +106,20 @@ const coreValue = ref([
 }
 .fade-enter-from,
 .fade-leave-to {
+  opacity: 0;
+}
+
+.text {
+  position: relative;
+  padding-left: 20px;
+  padding-top: 100px;
+}
+
+.text p {
+  position: absolute;
+  background-color: aquamarine;
+  top: 100px;
+  width: 60%;
   opacity: 0;
 }
 </style>
