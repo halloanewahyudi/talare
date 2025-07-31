@@ -20,6 +20,14 @@ export const useMenu = () => {
           path: '/about/vision-mission',
         },
         {
+          name: 'Why Choose Us',
+          path: '/about/why-choose-us',
+        },
+         {
+          name: 'What We Do',
+          path: '/about/what-we-do',
+        },
+        {
           name: 'Our Management',
           path: '/about/management',
         },
@@ -35,7 +43,7 @@ export const useMenu = () => {
     },
     {
       name: 'Services',
-      path: '#',
+      path: '/services',
     },
     {
       name: 'Clients & Strategic Partners',
