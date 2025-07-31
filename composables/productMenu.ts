@@ -1,14 +1,14 @@
 export const useProductMenu = () => {
   const productMenu = ref([
     {
-      name: 'Life Insurance',
-      path: '/products/life-insurance',
-      slug: 'life-insurance',
+      name: 'Energy Insurance',
+      path: '/products/energy-insurance',
+      slug: 'energy-insurance',
     },
     {
       name: 'Property Insurance',
-      path: '/products/property-insurance',
-      slug: 'property-insurance',
+      path: '/products/fire-property-insurance',
+      slug: 'fire-property-insurance',
     },
     {
       name: 'Engineering Insurance',
@@ -21,9 +21,9 @@ export const useProductMenu = () => {
       slug: 'marine-insurance',
     },
     {
-      name: 'Aviation Insurance',
-      path: '/products/aviation-insurance',
-      slug: 'aviation-insurance',
+      name: 'Suretyship Insurance',
+      path: '/products/suretyship-insurance',
+      slug: 'suretyship-insurance',
     },
     {
       name: 'Liability Insurance',
@@ -36,19 +36,19 @@ export const useProductMenu = () => {
       slug: 'financial-insurance',
     },
      {
-      name: 'General Accident Insurance',
-      path: '/products/general-accident-insurance',
-      slug: 'general-accident-insurance',
+      name: ' Miscellaneous Insurance',
+      path: '/products/miscellaneous-insurance',
+      slug: 'miscellaneous-insurance',
     },
     {
-      name: 'Oil and Gas Insurance',
-      path: '/products/oil-and-gas-insurance',
-      slug: 'oil-and-gas-insurance',
+      name: 'Health Insurance',
+      path: '/products/health-insurance',
+      slug: 'health-insurance',
     },
     {
-      name: 'Terrorism & Sabotage',
-      path: '/products/terrorism-and-sabotage',
-      slug: 'terrorism-and-sabotage',
+      name: 'Life Insurance',
+      path: '/products/life-insurance',
+      slug: 'life-insurance',
     },
   ])
 

@@ -1,48 +1,12 @@
-@import "tailwindcss";
-
-/* ===== Base Style ===== */
-@layer base {
-  html,
-  body {
-    @apply text-neutral-700 font-display;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply text-neutral-900;
-  }
-
-  p {
-    @apply leading-relaxed mb-6;
-  }
-
-  .btn {
-    @apply py-2 px-4 bg-primary text-white rounded-lg hover:bg-secondary duration-300;
-  }
-}
-
-/* ===== Theme Variables ===== */
-@theme {
-  --font-display: "Inter", "sans-serif";
-  --color-primary: #00b1f0;
-  --color-secondary: #ea0001;
-}
-
-/* ===== Gutenberg Block Styles ===== */
-
-/* --- Typography --- */
+/* === TYPOGRAPHY === */
 .wp-block-paragraph {
-  @apply mb-4 text-gray-800 leading-relaxed;
+  @apply prose mb-4 text-gray-800;
 }
-
 
 .wp-block-heading {
-  @apply font-bold mb-4;
+  @apply font-bold mb-4 text-gray-900;
 }
+
 .wp-block-heading h1 { @apply text-3xl; }
 .wp-block-heading h2 { @apply text-2xl; }
 .wp-block-heading h3 { @apply text-xl; }
@@ -50,26 +14,32 @@
 .wp-block-heading h5 { @apply text-base; }
 .wp-block-heading h6 { @apply text-sm; }
 
+/* List */
 .wp-block-list {
   @apply list-disc list-inside mb-4 pl-4;
 }
 
+/* Quote */
 .wp-block-quote {
   @apply border-l-4 pl-4 italic text-gray-600 my-6;
 }
 
+/* Code */
 .wp-block-code {
   @apply font-mono bg-gray-100 p-4 rounded text-sm overflow-x-auto;
 }
 
+/* Preformatted */
 .wp-block-preformatted {
   @apply font-mono bg-gray-100 p-4 rounded text-sm whitespace-pre overflow-x-auto;
 }
 
+/* Pullquote */
 .wp-block-pullquote {
   @apply border-l-4 pl-4 italic text-gray-700 my-8;
 }
 
+/* Table */
 .wp-block-table {
   @apply table-auto border-collapse border border-gray-300 my-6 w-full text-left;
 }
@@ -83,39 +53,24 @@
   @apply border-t border-gray-300 my-8;
 }
 
-/* --- Layout --- */
+/* === LAYOUT BLOCKS === */
+
+/* Columns */
 .wp-block-columns {
   @apply flex flex-col gap-6 md:flex-row;
 }
+
 .wp-block-column {
   @apply flex-1;
 }
 
+/* Group */
 .wp-block-group {
   @apply my-6;
 }
 
-/* Untuk group yang di-set flex di editor */
-.wp-block-group-is-layout-flex {
-  @apply flex flex-wrap gap-4;
-}
+/* === MEDIA BLOCKS === */
 
-/* Untuk columns yang sudah memang flex, tambahkan saja supaya aman */
-.wp-block-columns-is-layout-flex {
-  @apply flex flex-wrap gap-6;
-}
-
-
-/* Alignment from Gutenberg editor */
-.alignwide {
-  @apply max-w-6xl mx-auto;
-}
-.alignfull {
-  @apply w-full;
-}
-
-
-/* --- Media --- */
 .wp-block-image {
   @apply my-6;
 }
@@ -123,6 +78,7 @@
   @apply max-w-full h-auto;
 }
 
+/* Cover block */
 .wp-block-cover {
   @apply relative flex items-center justify-center text-white my-6 overflow-hidden;
 }
@@ -130,20 +86,23 @@
   @apply text-center p-6;
 }
 
+/* Gallery */
 .wp-block-gallery {
   @apply grid gap-4 my-6;
 }
 
+/* Video / Audio */
 .wp-block-video,
 .wp-block-audio {
   @apply my-6;
 }
 
+/* File */
 .wp-block-file {
   @apply my-4;
 }
 
-/* --- Buttons --- */
+/* Buttons */
 .wp-block-buttons {
   @apply flex flex-wrap gap-4 my-4;
 }
@@ -151,5 +110,5 @@
   @apply inline-block;
 }
 .wp-block-button__link {
-  @apply bg-primary text-white px-4 py-2 rounded hover:bg-secondary;
+  @apply bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700;
 }
