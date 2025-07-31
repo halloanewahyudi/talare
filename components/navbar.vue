@@ -9,7 +9,7 @@
       }"
     >
       <div class="flex justify-between items-center">
-        <NuxtLink to="/" class="flex items-center gap-2">
+        <NuxtLink to="/" class="flex items-center gap-2 z-50">
           <img
             src="/img/logo.png"
             alt="logo"

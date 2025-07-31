@@ -21,8 +21,12 @@
   }
 
   .btn {
-    @apply py-2 px-4 bg-primary text-white rounded-lg hover:bg-secondary duration-300;
+    @apply py-2 px-4 bg-primary text-white rounded-full max-w-max hover:bg-secondary duration-300;
   }
+}
+
+.input {
+  @apply block w-full p-2 bg-white rounded-md border border-gray-300  focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm  focus:outline-none;
 }
 
 /* ===== Theme Variables ===== */

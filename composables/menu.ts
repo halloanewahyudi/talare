@@ -55,7 +55,7 @@ export const useMenu = () => {
     },
     {
       name: 'Contact',
-      path: '#',
+      path: '/contact',
     },
   ])
   return {
