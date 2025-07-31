@@ -114,6 +114,10 @@
   @apply w-full;
 }
 
+ .attachment-thumbnail.size-thumbnail{
+  @apply w-full h-[220px] object-cover;
+ }
+
 
 /* --- Media --- */
 .wp-block-image {

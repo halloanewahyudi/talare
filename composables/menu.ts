@@ -47,11 +47,11 @@ export const useMenu = () => {
     },
     {
       name: 'Clients & Strategic Partners',
-      path: '#',
+      path: '/clients',
     },
     {
       name: 'Gallery',
-      path: '#',
+      path: '/gallery',
     },
     {
       name: 'Contact',
