@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts" setup>
-const { data: clients, status } = await useApi("/posts/partner");
+const { data: clients, status } = await useApi("/posts/partner?per_page=100");
 </script>
 
 <style></style>
