@@ -67,7 +67,7 @@
 
 <script lang="ts" setup>
 definePageMeta({
-  layout: "layout-contact",
+ 
 });
 
 const form = reactive({
