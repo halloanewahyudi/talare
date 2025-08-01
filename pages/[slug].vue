@@ -3,7 +3,7 @@
   <container>
 
       <img :src="product?.featured_image" alt="" class="h-[300px] object-cover w-full rounded-xl mb-5 ">
-     <div v-html="product?.content" class="flex flex-col gap-6"></div>
+     <div v-html="product?.content" class="flex flex-col "></div>
   </container>
   </div>
 </template>

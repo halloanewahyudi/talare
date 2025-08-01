@@ -39,7 +39,22 @@ export const useMenu = () => {
     },
      {
       name: 'Products',
-      path: productMenu.value[0].path,
+      children:[
+
+        {
+          name:'Facultative',
+          path: productMenu.value[0].path
+        },
+        {
+          name:'Treaty ',
+          path:'/treaty'
+        },
+        {
+          name:'Joint Placement',
+          path:'/joint-placement'
+        }
+      ],
+      
     },
     {
       name: 'Services',
