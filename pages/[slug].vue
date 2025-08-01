@@ -1,8 +1,12 @@
 <template>
   <div class="mb-20">
   <container>
-
-      <img :src="product?.featured_image" alt="" class="h-[300px] object-cover w-full rounded-xl mb-5 ">
+    <UiPageHader
+        :title="product?.title"
+        :subtitle="product?.acf.sub_title"
+        :bg="product?.featured_image"
+        class="mb-16"
+      />
      <div v-html="product?.content" class="flex flex-col "></div>
   </container>
   </div>
