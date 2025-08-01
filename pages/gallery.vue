@@ -11,7 +11,7 @@
           <div
             v-for="(item,index) in gallery?.acf?.gallery"
             :key="index"
-            class="group overflow-hidden rounded-xl border border-gray-300"
+            class="group overflow-hidden rounded-xl border border-gray-300 cursor-pointer"
           >
             <img
               @click="selectItem(index)"
