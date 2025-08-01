@@ -1,34 +1,82 @@
 <template>
-  <div class="p-6 lg:p-10">
-  
-     <form action="" class=" md:pt-16 max-w-[480px] mx-auto">
-     <p>Contact us, please fill out the form below.</p>
-     <div class="flex flex-col gap-5">
-      <input type="text" v-model="form.name" placeholder="Name" class="input">
-      <input type="text" v-model="form.email" placeholder="Email" class="input">
-      <input type="text" v-model="form.phone" placeholder="Phone" class="input">
-      <input type="text" v-model="form.company" placeholder="Company" class="input">
-      <textarea name="" id="" cols="30" rows="4" v-model="form.message" placeholder="Message" class="input"></textarea>
-      <button class="btn cursor-pointer flex items-center gap-2">Send <icon name="ri:send-plane-fill" class="text-xl" /></button>
-     </div>
-     </form>
+  <div class="min-h-screen relative">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 min-h-screen items-center">
+      <div class="md:col-span-1 relative">
+        <img
+          src="/img/klaim.jpg"
+          alt=""
+          class="w-full min-h-screen h-full object-cover"
+        />
+        <h1
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl lg:text-6xl font-bold text-white"
+        >
+          Contact
+        </h1>
+      </div>
+      <div class="md:col-span-2 lg:col-span-1">
+        <div class="p-6 lg:p-10">
+          <form action="" class="md:pt-16 max-w-[480px] mx-auto">
+            <p>Contact us, please fill out the form below.</p>
+            <div class="flex flex-col gap-5">
+              <input type="text" v-model="form.name" placeholder="Name" class="input" />
+              <input type="text" v-model="form.email" placeholder="Email" class="input" />
+              <input type="text" v-model="form.phone" placeholder="Phone" class="input" />
+              <input
+                type="text"
+                v-model="form.company"
+                placeholder="Company"
+                class="input"
+              />
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="4"
+                v-model="form.message"
+                placeholder="Message"
+                class="input"
+              ></textarea>
+              <button class="btn cursor-pointer flex items-center gap-2">
+                Send <icon name="ri:send-plane-fill" class="text-xl" />
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+<section class="py-20 bg-gray-100">
+ <container>
+      <div class="flex flex-col gap-5 ">
+        <div class="bg-white rounded-xl border border-gray-200 p-6 lg:p-10">
+          Members of APPARINDO : 121-2005/APPARINDO/2017 (APPARINDO: The Association of
+          Indonesia Insurance and Reinsurance Brokers)
+        </div>
+
+         <div class="bg-white  rounded-xl border border-gray-200 p-6 lg:p-10">
+          Company License:
+ Keputusan Menteri Keuangan R.I No.:KEP-365/KM.5/2005, Tanggal 31 Oktober 2005
+
+        </div>
+
+      </div>
+    </container>
+</section>
+   
   </div>
 </template>
 
 <script lang="ts" setup>
- definePageMeta({
-   layout: 'layout-contact',
- })
+definePageMeta({
+  layout: "layout-contact",
+});
 
- const form = reactive({
-   name: '',
-   email: '',
-   phone: '',
-   company: '', 
-   message: ''
- })
+const form = reactive({
+  name: "",
+  email: "",
+  phone: "",
+  company: "",
+  message: "",
+});
 </script>
 
-<style>
-
-</style>
+<style></style>
