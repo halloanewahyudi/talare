@@ -4,7 +4,7 @@
 @layer base {
   html,
   body {
-    @apply text-neutral-700 font-display;
+    @apply text-neutral-700 font-display ;
   }
 
   h1,

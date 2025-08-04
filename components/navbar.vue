@@ -1,12 +1,10 @@
 <template>
-  <div
-    class="py-2 flex flex-col gap-4"
-    :class="{ 'sticky top-0 z-50 bg-white lg:bg-transparent': isSticky }"
+<div
+    class="py-2 flex flex-col gap-4 fixed top-0 left-0 w-full z-50 bg-white lg:bg-transparent transition-transform duration-300"
+    :class="{ '-translate-y-full': !isSticky, 'translate-y-0': isSticky }"
   >
     <Container
-      :class="{
-        'lg:hidden lg:opacity-0 duration-300 transition-all ease-in-out': isSticky,
-      }"
+   
     >
       <div class="flex justify-between items-center">
         <NuxtLink to="/" class="flex items-center gap-2 z-50">
@@ -94,25 +92,48 @@
     </div>
   </div>
 </template>
+
 <script lang="ts" setup>
 const { menus } = useMenu();
-const isSticky = ref(false);
 const mobileMenu = ref(false);
+const activeDropdown = ref<string | null>(null);
+const isSticky = ref(true);
+
+let lastScroll = 0;
+
+const handleScroll = () => {
+  const currentScroll = window.scrollY;
+
+  if (currentScroll <= 0) {
+    isSticky.value = true;
+    return;
+  }
+
+  if (currentScroll > lastScroll && currentScroll > 80) {
+    // Scroll down
+    isSticky.value = false;
+  } else {
+    // Scroll up
+    isSticky.value = true;
+  }
+
+  lastScroll = currentScroll;
+};
 
 onMounted(() => {
-  const handleScroll = () => {
-    isSticky.value = window.scrollY > 100;
-  };
   window.addEventListener("scroll", handleScroll);
-  onBeforeUnmount(() => window.removeEventListener("scroll", handleScroll));
 });
 
-const activeDropdown = ref<string | null>(null);
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 
 const toggleDropdown = (path: string) => {
   activeDropdown.value = activeDropdown.value === path ? null : path;
 };
 </script>
+
+
 <style scoped>
 @reference "tailwindcss";
 .nav-link {
