@@ -108,7 +108,7 @@ const isSticky = ref(false);
 const mobileMenu = ref(false);
 
 const navbarOffset = 60; // Tambahan offset di atas tinggi navbar
-
+const navbarRef = ref<HTMLElement | null>(null);
 
 onMounted(() => {
   const handleScroll = () => {
