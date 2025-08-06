@@ -25,6 +25,11 @@ export const useProductMenu = () => {
       path: '/products/suretyship-insurance',
       slug: 'suretyship-insurance',
     },
+      {
+      name: 'Credit Insurance',
+      path: '/products/credit-insurance',
+      slug: 'credit-insurance',
+    },
     {
       name: 'Liability Insurance',
       path: '/products/liability-insurance',
