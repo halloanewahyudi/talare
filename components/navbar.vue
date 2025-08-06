@@ -38,7 +38,7 @@
 
    <!-- Sticky nav -->
     <div
-    ref="navbarRef"
+   
       class="navbar sticky top-0 z-50 duration-300 lg:block"
       :class="[mobileMenu ? 'block opacity-100' : 'hidden', isSticky ? '' : 'mb-16']"
     >
