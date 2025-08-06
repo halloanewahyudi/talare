@@ -1,7 +1,8 @@
 <template>
   <div
+  
     class="py-2 flex flex-col gap-4"
-    :class="{ 'sticky top-0 z-50 bg-white lg:bg-transparent': isSticky }"
+    :class="{ 'sticky top-0  z-50 bg-white lg:bg-transparent': isSticky }"
   >
     <Container
       :class="{
@@ -32,10 +33,14 @@
       </div>
     </Container>
 
-    <!-- Sticky nav -->
+   
+  </div>
+
+   <!-- Sticky nav -->
     <div
+    ref="navbarRef"
       class="navbar sticky top-0 z-50 duration-300 lg:block"
-      :class="[mobileMenu ? 'block opacity-100' : 'hidden']"
+      :class="[mobileMenu ? 'block opacity-100' : 'hidden', isSticky ? '' : 'mb-16']"
     >
       <Container>
         <nav
@@ -92,19 +97,48 @@
         </nav>
       </Container>
     </div>
-  </div>
+
 </template>
 <script lang="ts" setup>
 const { menus } = useMenu();
+
+// const { isSticky } = useStickyNavbar()
+
 const isSticky = ref(false);
 const mobileMenu = ref(false);
 
+const navbarOffset = 60; // Tambahan offset di atas tinggi navbar
+
+
 onMounted(() => {
   const handleScroll = () => {
-    isSticky.value = window.scrollY > 100;
+    const shouldStick = window.scrollY > 100;
+    isSticky.value = shouldStick;
+
+    if (shouldStick && navbarRef.value) {
+      const navbarHeight = navbarRef.value.offsetHeight;
+      document.body.style.paddingTop = `${navbarHeight + 60}px`;
+    } else {
+      document.body.style.paddingTop = "0px";
+    }
   };
+
   window.addEventListener("scroll", handleScroll);
-  onBeforeUnmount(() => window.removeEventListener("scroll", handleScroll));
+  handleScroll(); // Run on load
+
+  onBeforeUnmount(() => {
+    window.removeEventListener("scroll", handleScroll);
+  });
+});
+
+// Watch for sticky changes
+watch(isSticky, (value) => {
+  if (value && navbarRef.value) {
+    const navbarHeight = navbarRef.value.offsetHeight;
+    document.body.style.paddingTop = `${navbarHeight + navbarOffset}px`;
+  } else {
+    document.body.style.paddingTop = "0px";
+  }
 });
 
 const activeDropdown = ref<string | null>(null);
@@ -112,6 +146,8 @@ const activeDropdown = ref<string | null>(null);
 const toggleDropdown = (path: string) => {
   activeDropdown.value = activeDropdown.value === path ? null : path;
 };
+
+
 </script>
 <style scoped>
 @reference "tailwindcss";
