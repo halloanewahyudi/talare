@@ -1,9 +1,11 @@
 <template>
+  <div class="fixed inset-0 bg-secondary  left-0 top-0 h-0.5 z-50 " :style="`width:${progress}%`"></div>
   <div
   
     class="py-2 flex flex-col gap-4"
     :class="{ 'sticky top-0  z-50 bg-white lg:bg-transparent': isSticky }"
   >
+
     <Container
       :class="{
         'lg:hidden lg:opacity-0 duration-300 transition-all ease-in-out': isSticky,
@@ -147,6 +149,14 @@ const toggleDropdown = (path: string) => {
   activeDropdown.value = activeDropdown.value === path ? null : path;
 };
 
+// progress bar
+
+ const { progress, isLoading, start, finish, clear } = useLoadingIndicator({
+    duration: 2000,
+    throttle: 200,
+    // This is how progress is calculated by default
+    estimatedProgress: (duration, elapsed) => (2 / Math.PI * 100) * Math.atan(elapsed / duration * 100 / 50)
+  })
 
 </script>
 <style scoped>
