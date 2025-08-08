@@ -15,7 +15,7 @@
       </div>
       <div class="md:col-span-2 lg:col-span-1">
         <div class="p-6 lg:p-10">
-          <form action="" class="md:pt-16 max-w-[480px] mx-auto">
+          <form  @submit.prevent="submit" class="md:pt-16 max-w-[480px] mx-auto">
             <p>Contact us, please fill out the form below.</p>
             <div class="flex flex-col gap-5">
               <input type="text" v-model="form.name" placeholder="Name" class="input" />
@@ -70,6 +70,8 @@ definePageMeta({
  
 });
 
+const mail = useMail();
+
 const form = reactive({
   name: "",
   email: "",
@@ -77,6 +79,11 @@ const form = reactive({
   company: "",
   message: "",
 });
+
+const submit = () => {
+  mail.send(form);
+  console.log(form);
+};
 </script>
 
 <style></style>

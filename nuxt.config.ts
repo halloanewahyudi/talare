@@ -9,6 +9,15 @@ export default defineNuxtConfig({
     public: {
       baseUrl: process.env.WP_BASE_URL || 'http://localhost:3000',
     },
+    mail:{
+      message: {
+        to: 'hallo.anewahyudi@gmail.com',
+      },
+       smtp: {
+        host: "smtp.gmail.com",
+        port: 587,
+      },
+    }
   },
 
   app: {
@@ -24,7 +33,7 @@ export default defineNuxtConfig({
     ]
   },
 
-  modules: ['@nuxt/fonts', '@nuxt/icon'],
+  modules: ['@nuxt/fonts', '@nuxt/icon', 'nuxt-mail'],
   fonts: {
     google: [
       {
@@ -33,4 +42,5 @@ export default defineNuxtConfig({
       },
     ],
   }
+  
 })
