@@ -29,25 +29,26 @@
     <h4 class="text-2xl lg:text-primary lg:text-4xl font-bold mb-6">Whate we believe </h4>
     <div class="flex h-[400px] overflow-hidden rounded-lg">
       <div
-        v-for="(item, index) in coreValue"
+        v-for="(item, index) in coreValuesArray"
         :key="item.title"
         class="group relative overflow-hidden cursor-pointer transition-all duration-500 ease-in-out flex-1 hover:flex-[2] bg-black"
       >
         <!-- Background image -->
         <img
-          :src="item.image"
+          :src="item.image.url"
           class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-300 group-hover:scale-110 opacity-40 group-hover:opacity-80" 
         />
         <!-- Content --> 
         <div class="absolute bottom-0 p-4 z-20 text-white transition-all duration-300">
           <h4 class="text-xl font-bold text-white">{{ item.title }}</h4>
           <p class="text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute group-hover:relative w-full ">
-            {{ item.subtitle }}
+            {{ item.description }}
           </p>
         </div>
       </div>
     </div>
   </div>
+
     </Container>
   </div>
 </template>
@@ -65,35 +66,7 @@ const setActive = (index: number) => {
   activeIndex.value = activeIndex.value === index ? null : index;
 };
 
-
-const coreValue = ref([
-  {
-    title: "Trust",
-    subtitle: "We believe in building enduring relationships with our clients and partners, founded on transparency and mutual respect.",
-    image: "../img/brief.jpg",
-  },
-  {
-    title: "Excellence",
-    subtitle: "Quality is at the core of everything we do. We strive to exceed expectations by delivering innovative and effective solutions.",
-    image: "../img/brief.jpg",
-  },
-  {
-    title: "Collaboration",
-    subtitle: "By fostering a culture of collaboration—both internally and externally—we empower our clients and partners to achieve shared success.",
-    image: "../img/brief.jpg",
-  },
-  {
-    title: "Sustainability",
-    subtitle: "We are committed to contributing to the sustainable growth of the insurance and reinsurance industry in Indonesia by promoting sound practices and embracing responsible business strategies.",
-    image: "../img/brief.jpg",
-  },
-   {
-    title: "Empowerment",
-    subtitle: "Through knowledge-sharing and capacity-building initiatives, we empower our clients to make informed decisions and navigate risks confidently. ",
-    image: "../img/brief.jpg",
-  },
-]);
-
+const coreValuesArray = computed<CoreValue[]>(() => Object.values(visimisi.value.acf.core_values));
 
 </script>
 
