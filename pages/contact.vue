@@ -81,7 +81,11 @@ const form = reactive({
 });
 
 const submit = () => {
-  mail.send(form);
+  mail.send({
+  from: form.name,
+  subject: 'Contact Form',
+  text: form,
+})
   console.log(form);
 };
 </script>

@@ -4,21 +4,21 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-
+ modules: ['@nuxt/fonts', '@nuxt/icon', 'nuxt-mail'],
   runtimeConfig: {
     public: {
       baseUrl: process.env.WP_BASE_URL || 'http://localhost:3000',
     },
     mail:{
       message: {
-        to: 'hallo.anewahyudi@gmail.com',
+        to: 'wahyudi@proweb.co.id',
       },
        smtp: {
-        host: "smtp.gmail.com",
-        port: 587,
+        host: "mail.proweb.co.id",
+        port: 465,
         auth: {
-          user: "hallo.anewahyudi@gmail.com",
-          pass: "farelardafa3",
+          user: "wahyudi@proweb.co.id",
+          pass: "@ZohoBaru1610",
         }
       },
     }
@@ -37,7 +37,7 @@ export default defineNuxtConfig({
     ]
   },
 
-  modules: ['@nuxt/fonts', '@nuxt/icon', 'nuxt-mail'],
+ 
   fonts: {
     google: [
       {
