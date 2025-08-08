@@ -94,7 +94,7 @@ const submit = async () => {
     const res = await $fetch("/api/send-email", {
       method: "POST",
       body: {
-        to: "targeti@gmail.com",
+        to: "hallo.anewahyudi@gmail.com",
         subject: "Pesan dari situs kamu",
         message: htmlMessage,
       },
