@@ -15,7 +15,8 @@ export default defineNuxtConfig({
       },
        smtp: {
         host: "mail.proweb.co.id",
-        port: 465,
+        port: 587,
+        secure: false,
         auth: {
           user: "wahyudi@proweb.co.id",
           pass: "@ZohoBaru1610",
