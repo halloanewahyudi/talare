@@ -25,7 +25,12 @@
 const baseUrl = useRuntimeConfig().public.baseUrl;
  const { data:about, pending, error, refresh } = await useFetch(baseUrl+'/api/v1/content/about')
 
+ // data services
+/* const baseUrl = useRuntimeConfig().public.baseUrl;
+ const { data:dataServices, pending, error, refresh } = await useFetch(baseUrl+'/api/v1/content/services')
+ */
 /* 
+
 const { $gsap } = useNuxtApp();
     let ctx; // To manage GSAP Context
 
