@@ -2,16 +2,21 @@
   <div class="min-h-screen relative">
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 min-h-screen items-center">
       <div class="md:col-span-1 relative">
+       <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-black/75 to-transparent"></div>
         <img
-          src="/img/klaim.jpg"
+          :src="contact?.featured_image"
           alt=""
           class="w-full min-h-screen h-full object-cover"
         />
-        <h1
-          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl lg:text-6xl font-bold text-white"
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white ">
+         <h1
+          class="text-4xl lg:text-6xl font-bold text-white"
         >
-          Contact
+          {{ contact?.title }}
         </h1>
+        <p>{{ contact?.acf?.sub_title }}</p>
+        </div>
+       
       </div>
       <div class="md:col-span-2 lg:col-span-1">
         <div class="p-6 lg:p-10">
@@ -113,4 +118,8 @@ const submit = async () => {
   }
 };
 
+
+// data services
+const baseUrl = useRuntimeConfig().public.baseUrl;
+ const { data:contact, pending, error, refresh } = await useFetch(baseUrl+'/api/v1/content/contact')
 </script>
