@@ -2,8 +2,8 @@
   <div>
     <Container>
       <!--  hero -->
-      <div v-for="value in source"></div>
-      <Hero :bg="home?.acf?.counter?.background?.url" class="rounded-xl overflow-hidden mb-20">
+      
+      <Hero bg="/img/talare-slider1.jpg" class="rounded-xl overflow-hidden mb-20">
         <div class="max-w-[600px] w-full">
           <h1 class="text-4xl lg:text-6xl font-bold text-white">
             Reinsurance Brokers & Consultant

@@ -1,8 +1,16 @@
 <template>
   <div>
     <container>
+    
       <div v-if="status === 'pending'">loading...</div>
       <div v-else>
+         <ui-page-hader
+        :title="dataServices?.title"
+        :subtitle="dataServices?.acf?.sub_title"
+        :bg="dataServices?.featured_image"
+        class="mb-20"
+      />
+      
       <div class="flex items-center gap-2 mb-5">
         <div class="line w-10 lg:w-20 h-1 bg-primary"></div>
         <h2 class="text-4xl text-primary font-bold">Gallery</h2>
