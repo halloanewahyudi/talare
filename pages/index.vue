@@ -2,10 +2,11 @@
   <div>
     <Container>
       <!--  hero -->
+      <div v-for="value in source"></div>
       <Hero :bg="home?.acf?.counter?.background?.url" class="rounded-xl overflow-hidden mb-20">
         <div class="max-w-[600px] w-full">
           <h1 class="text-4xl lg:text-6xl font-bold text-white">
-            Reinsurance Consultant
+            Reinsurance Brokers &Consultant
           </h1>
           <p class="text-2xl text-white">
             full service international reinsurance intermediary companies in Indonesia. 
