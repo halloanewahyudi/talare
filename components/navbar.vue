@@ -1,11 +1,11 @@
 <template>
   <!-- Progress bar -->
-  <div class="fixed inset-0 bg-secondary h-0.5 z-50 mb-16" :style="`width:${progress}%`"></div>
+  <div class="fixed inset-0 bg-secondary h-0.5 z-50 " :style="`width:${progress}%`"></div>
 
   <!-- Navbar -->
   <header
     ref="navbarRef"
-    class="fixed top-0 left-0 w-full z-50 transition-transform duration-300"
+    class="fixed top-0 left-0 w-full z-50 transition-transform duration-300 "
     :class="isVisible ? 'translate-y-0 bg-white/50 backdrop-blur-2xl ' : '-translate-y-full'"
   >
     <!-- Top Container -->

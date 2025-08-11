@@ -48,12 +48,8 @@
     <section class="py-20 bg-gray-100">
       <container>
         <div class="flex flex-col gap-5">
-          <div class="bg-white rounded-xl border border-gray-200 p-6 lg:p-10">
-            Members of APPARINDO : 121-2005/APPARINDO/2017 (APPARINDO: The Association of
-            Indonesia Insurance and Reinsurance Brokers)
-          </div>
-          <div class="bg-white rounded-xl border border-gray-200 p-6 lg:p-10">
-            Company License: Keputusan Menteri Keuangan R.I No.:KEP-365/KM.5/2005, Tanggal 31 Oktober 2005
+          <div class="bg-white rounded-xl border border-gray-200 p-6 lg:p-10" v-for="value in contact?.acf?.status">
+           {{ value.item }}
           </div>
         </div>
       </container>
