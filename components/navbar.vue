@@ -18,7 +18,7 @@
           <img src="/img/logo-transparent.png" alt="logo" class="h-7 lg:h-10 shrink-0 object-contain" />
         </NuxtLink>
 
-        <img src="/img/logoipsum.svg" alt="logo" class="h-5 lg:h-8 shrink-0 object-contain" />
+        <img src="/img/ojk.png" alt="logo" class="h-5 lg:h-10 shrink-0 object-contain" />
         <button @click="mobileMenu = !mobileMenu" class="lg:hidden">
           <Icon name="line-md:close-to-menu-alt-transition" class="text-3xl text-primary" />
         </button>
