@@ -9,7 +9,7 @@
       />
 
       <section> 
-        <div class="text-2xl  text-center leading-relaxed max-w-3xl mx-auto mb-20" v-html="dataServices?.acf?.description">
+        <div class="text-2xl  text-center leading-relaxed  mb-20" v-html="dataServices?.acf?.description">
       
         </div>
 
