@@ -6,7 +6,7 @@
   <header
     ref="navbarRef"
     class="fixed top-0 left-0 w-full z-50 transition-transform duration-300 "
-    :class="isVisible ? 'translate-y-0 bg-white/50 backdrop-blur-2xl ' : '-translate-y-full'"
+    :class="isVisible ? 'translate-y-0 bg-white/50 backdrop-blur-2xl' : '-translate-y-full lg:top-12'"
   >
     <!-- Top Container -->
     <Container

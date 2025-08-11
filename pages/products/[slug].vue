@@ -53,14 +53,20 @@ const { data: product } = await useApi(`/content/${route.params.slug}`)
 
 
 
-<style>
-.product-content ul {
-  list-style: disc;
+<style scoped>
+
+
+
+/* .product-content ul {
+  list-style: none ;
   padding-left: 1.5rem;
   margin-left: 0;
 }
 
 .product-content li {
-  padding-left: 0;
-}
+  padding-left: 0; 
+
+} */
+
+
 </style>

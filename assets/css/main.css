@@ -58,7 +58,19 @@
 .wp-block-heading h6 { @apply text-sm; }
 
 .wp-block-list {
-  @apply list-disc list-inside mb-4 pl-4;
+  @apply list-disc pl-4 ;
+}
+
+.wp-block-list .item-title {
+  @apply list-none;
+}
+
+.wp-block-list .item-title   ul  li::marker {
+  content: '⚹'
+}
+
+.wp-block-list .item-title  ul  ul li::marker {
+  content: '-'
 }
 
 .wp-block-quote {
