@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white text-neutral-600">
-    <div class="bg-gradient-to-r from-blue-600 to-primary py-5 border-b border-neutral-200">
+    <div class="bg-gradient-to-br from-blue-700 to-primary py-5 border-b border-neutral-200">
       <Container>
         <h2 class="text-xl lg:text-2xl text-white/70">
           PT.Tala Reinsurance Brokers & Consultants
