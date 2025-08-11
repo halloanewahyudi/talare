@@ -5,7 +5,7 @@
       <Hero :bg="home?.acf?.counter?.background?.url" class="rounded-xl overflow-hidden mb-20">
         <div class="max-w-[600px] w-full">
           <h1 class="text-4xl lg:text-6xl font-bold text-white">
-            Lorem ipsum dolor sit amet
+            Reinsurance Consultant
           </h1>
           <p class="text-2xl text-white">
             full service international reinsurance intermediary companies in Indonesia. 
