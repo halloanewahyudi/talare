@@ -5,15 +5,15 @@
       <div v-if="status === 'pending'">loading...</div>
       <div v-else>
          <ui-page-hader
-        :title="dataServices?.title"
-        :subtitle="dataServices?.acf?.sub_title"
-        :bg="dataServices?.featured_image"
+        :title="gallery.title"
+        :subtitle="gallery?.acf?.sub_title"
+        :bg="gallery?.featured_image"
         class="mb-20"
       />
       
       <div class="flex items-center gap-2 mb-5">
         <div class="line w-10 lg:w-20 h-1 bg-primary"></div>
-        <h2 class="text-4xl text-primary font-bold">Gallery</h2>
+        <h2 class="text-4xl text-primary font-bold">What's Going on ?</h2>
       </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 pb-20">
           <div
