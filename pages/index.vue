@@ -8,8 +8,7 @@
             Lorem ipsum dolor sit amet
           </h1>
           <p class="text-2xl text-white">
-            consectetur adipiscing elit. Ut non lobortis enim. Donec et nunc nec diam
-            laoreet rhoncus.
+            full service international reinsurance intermediary companies in Indonesia. 
           </p>
         </div>
       </Hero>
