@@ -1,6 +1,6 @@
 <template>
   <div class="hero" :style="`background-image: url(${props.bg})`">
-    <div class="absolute inset-0 bg-gradient-to-tr from-black/75 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-tr from-black/15 to-transparent"></div>
     <div class="relative z-10 w-full">
       <slot />
     </div>
