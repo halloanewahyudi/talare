@@ -3,8 +3,8 @@
     <Container>
       <!--  hero -->
       
-      <Hero bg="/img/talare-slider1.jpg" class="rounded-xl overflow-hidden mb-20">
-        <div class="max-w-[600px] w-full">
+      <Hero bg="/img/talare-slider1.jpg" class="rounded-xl overflow-hidden mb-20 ">
+        <div class="max-w-[600px] w-full flex flex-col justify-end h-full">
           <h1 class="text-4xl lg:text-6xl font-bold text-white">
             Reinsurance Brokers & Consultant
           </h1>

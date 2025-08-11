@@ -16,6 +16,6 @@ const props = defineProps({
 <style>
 @reference "tailwindcss";
 .hero {
-  @apply bg-cover bg-center flex flex-col items-center justify-center p-10 min-h-[80vh] relative;
+  @apply bg-cover bg-center flex flex-col items-center justify-end p-10 min-h-[80vh] relative;
 }
 </style>
