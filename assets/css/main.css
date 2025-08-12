@@ -62,16 +62,21 @@
 }
 
 .wp-block-list .item-title {
-  @apply list-none;
+  @apply list-none text-xl;
 }
 
-.wp-block-list .item-title   ul  li::marker {
+.wp-block-list .item-title ul  li::marker {
   content: '';
-  font-weight: bold;
+ @apply font-bold ml-0 pl-0;
 }
-
+.wp-block-list .item-title .wp-block-list{
+  @apply font-medium ml-0 pl-0 text-base;
+}
+.wp-block-list .item-title .wp-block-list .wp-block-list {
+  @apply pl-4 font-normal;
+}
 .wp-block-list .item-title  ul  ul li::marker {
-  content: '-'
+  content: '-';
 }
 
 .wp-block-quote {

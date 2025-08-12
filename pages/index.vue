@@ -1,18 +1,21 @@
 <template>
   <div>
     <Container>
-      <!--  hero -->
-      
-      <Hero bg="/img/talare-slider1.jpg" class="rounded-xl overflow-hidden mb-20 ">
+    <!-- Basic Slider -->
+    <Splide :options="{ rewind: true, arrows: false, pagination: false }" aria-label="Basic Example">
+   
+       <SplideSlide class="w-full"  v-for="value in home?.acf?.slideshow" :key="slide">
+
+          <Hero :bg="value?.slide?.slide_image?.url" class="rounded-xl overflow-hidden mb-20 ">
         <div class="max-w-[600px] w-full flex flex-col justify-end h-full">
-          <h1 class="text-4xl lg:text-6xl font-bold text-white">
-            Reinsurance Brokers & Consultant
-          </h1>
-          <p class="text-2xl text-white">
-            full service international reinsurance intermediary companies in Indonesia. 
-          </p>
+          <h1 class="text-4xl lg:text-6xl font-bold text-white" v-html="value?.slide?.slide_title"> </h1>
+          <div class="text-2xl text-white" v-html="value?.slide?.slide_description"></div>
         </div>
       </Hero>
+      </SplideSlide>
+ 
+    </Splide>
+
 
       <!--   Brief -->
       <section
@@ -25,7 +28,7 @@
         </GsapFadeUp>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 relative">
-          <div class="">
+          <div >
             <img
               :src="home?.acf?.a_brief_of_talare?.image?.url"
               alt=""
@@ -51,7 +54,9 @@
 
       <!-- counter  -->
        <section
-    class="grid grid-cols-1 md:grid-cols-3 gap-5 bg-[url('/img/banner-statistik.jpg')] bg-cover bg-center rounded-xl overflow-hidden p-6 lg:p-10 mb-20 relative text-white"
+    class="grid grid-cols-1 md:grid-cols-3 gap-5  bg-cover bg-center rounded-xl overflow-hidden p-6 lg:p-10 mb-20 relative text-white" :style="{
+      backgroundImage: `url(${home?.acf?.counter?.background?.url})`,
+    }"
   >
     <Counter
       v-for="(item, i) in home?.acf?.counter?.item"

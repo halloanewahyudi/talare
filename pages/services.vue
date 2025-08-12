@@ -9,9 +9,7 @@
       />
 
       <section> 
-        <div class="text-2xl  text-center leading-relaxed  mb-20" v-html="dataServices?.acf?.description">
-      
-        </div>
+        <div class=" text-center leading-relaxed  mb-20" v-html="dataServices?.acf?.description"></div>
 
   <div class="flex flex-col gap-6 lg:gap-10 mb-20">
     <div class="service-item" v-for="(item, index) in dataServices?.acf?.services" :key="index">

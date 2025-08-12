@@ -32,6 +32,8 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  plugins: ['~/plugins/splide.client.ts'],
+
 
   vite: {
     plugins: [

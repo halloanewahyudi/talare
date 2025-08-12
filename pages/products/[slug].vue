@@ -5,8 +5,8 @@
       <h1
         class="flex flex-col lg:flex-row gap-4 text-2xl lg:text-4xl font-light border-b-2 text-primary product-title"
       >
-        <span class="font-bold border-b-4 border-primary pb-1">Product</span>
-        <span>{{ item?.name || '' }}</span>
+        <span class="font-bold border-b-4 border-primary pb-1"> PRODUCT</span>
+        <span class="">{{ product?.title || '' }}</span>
       </h1>
     </div>
 
@@ -17,7 +17,7 @@
       :alt="product?.name || 'Product Image'"
       class="w-full h-[300px] object-cover rounded-xl mb-5"
     />
-
+  
     <!-- Konten Produk -->
     <div v-if="product?.content" v-html="cleanContent"  class="product-content"></div>
   </div>
@@ -49,13 +49,16 @@ onMounted(() => {
 
 // Ambil data produk dari API
 const { data: product } = await useApi(`/content/${route.params.slug}`)
+
 </script>
 
 
 
 <style scoped>
 
-
+.title-case {
+  text-transform:capitalize;
+}
 
 /* .product-content ul {
   list-style: none ;
