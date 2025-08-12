@@ -9,7 +9,7 @@
               <img
                 :src="person.featured_image"
                 alt=""
-                class="w-full h-[260px] object-cover rounded-xl border border-neutral-400 shadow-xl"
+                class="w-full h-[260px] object-cover rounded-xl border border-neutral-400 shadow-xl bg-gradient-to-b from-primary to-blue-400"
               />
             </div>
           </div>
@@ -36,7 +36,7 @@
               <img
                 :src="manager.featured_image"
                 alt=""
-                class="w-[60px] h-[60px] object-cover object-top rounded-full shrink-0"
+                class="w-[60px] h-[60px] object-cover object-top rounded-full shrink-0 bg-gradient-to-b from-primary to-blue-400"
               />
               <div>
                 <h4 class="text-sm font-semibold mb-1">{{ manager.title }}</h4>

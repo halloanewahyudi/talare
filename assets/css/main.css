@@ -62,7 +62,7 @@
 }
 
 .wp-block-list .item-title {
-  @apply list-none text-xl;
+  @apply list-none text-xl text-primary;
 }
 
 .wp-block-list .item-title ul  li::marker {
@@ -70,7 +70,7 @@
  @apply font-bold ml-0 pl-0;
 }
 .wp-block-list .item-title .wp-block-list{
-  @apply font-medium ml-0 pl-0 text-base;
+  @apply font-medium ml-0 pl-0 text-base text-gray-700;
 }
 .wp-block-list .item-title .wp-block-list .wp-block-list {
   @apply pl-4 font-normal;
