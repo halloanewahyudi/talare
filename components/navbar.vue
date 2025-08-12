@@ -1,6 +1,6 @@
 <template>
   <!-- Progress bar -->
-  <div class="fixed inset-0 bg-secondary h-0.5 z-50 " :style="`width:${progress}%`"></div>
+  <div class="fixed inset-0 bg-secondary h-0.5 z-[1000] " :style="`width:${progress}%`"></div>
 
   <!-- Navbar -->
   <header
