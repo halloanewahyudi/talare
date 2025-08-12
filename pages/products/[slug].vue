@@ -6,7 +6,7 @@
         class="flex flex-col lg:flex-row gap-4 text-2xl lg:text-4xl font-light border-b-2 text-primary product-title"
       >
         <span class="font-bold border-b-4 border-primary pb-1"> PRODUCT</span>
-        <span class="">{{ product?.title || '' }}</span>
+        <span class="uppercase">{{ product?.title || '' }}</span>
       </h1>
     </div>
 
