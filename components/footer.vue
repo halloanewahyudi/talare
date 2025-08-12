@@ -3,7 +3,7 @@
     <div class="bg-gradient-to-br from-blue-700 to-primary py-5 border-b border-neutral-200">
       <Container>
         <h2 class="text-xl lg:text-2xl text-white/70">
-          PT.Tala Reinsurance Brokers & Consultants
+          PT.Tala Reinsurance Brokers
         </h2>
       </Container>
     </div>
@@ -28,10 +28,14 @@
                 <Icon name="cil:fax" class="text-xl" />
                 <span class="text-sm"> +6221 830 6662 </span>
               </div>
-              <div class="flex gap-1">
+              <a href="mailto:Talare@tala-re.com" class="flex gap-1">
                 <Icon name="si:mail-line" class="text-xl" />
-                <span class="text-sm"> talare@talare.co.id </span>
-              </div>
+                <span class="text-sm"> Talare@tala-re.com </span>
+              </a>
+              <a href="#" class="flex gap-1">
+                <Icon name="famicons:logo-instagram" class="text-xl" />
+                <span class="text-sm">wearetalare</span>
+              </a>
             </div>
             <!-- end flex menu -->
           </div>

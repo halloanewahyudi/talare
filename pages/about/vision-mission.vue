@@ -94,6 +94,7 @@ const coreValuesArray = computed<CoreValue[]>(() => Object.values(visimisi.value
   top: 100px;
   width: 60%;
   opacity: 0;
+  text-align: justify;
 }
 </style>
 

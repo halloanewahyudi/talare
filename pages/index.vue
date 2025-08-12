@@ -23,7 +23,7 @@
       >
         <GsapFadeUp>
           <h2 class="text-2xl lg:text-4xl font-bold text-primary mb-5">
-            A Brief of Talare
+           A Brief of PT Tala Reinsurance Brokers
           </h2>
         </GsapFadeUp>
 
@@ -37,12 +37,12 @@
           </div>
    <GsapFadeUp>
           <div
-            class="relative p-6 lg:p-10 rounded-xl bg-white flex flex-col gap-5 border border-neutral-200 lg:shadow-2xl h-max"
+            class="relative p-6 lg:p-10 rounded-xl bg-white/50 backdrop-blur-lg flex flex-col gap-5 border border-neutral-200 lg:shadow-2xl h-max"
           >
             <h3 class="text-2xl font-bold text-primary" v-html="home?.acf?.a_brief_of_talare?.title">
              
             </h3>
-            <div v-html="home?.acf?.a_brief_of_talare?.description"></div>
+            <div v-html="home?.acf?.a_brief_of_talare?.description" class="text-gray-700"></div>
 
             <NuxtLink :to="home.acf?.a_brief_of_talare?.button?.url" class="btn btn-primary self-end">
             {{ home.acf?.a_brief_of_talare?.button?.title }}
@@ -52,19 +52,7 @@
         </div>
       </section>
 
-      <!-- counter  -->
-       <section
-    class="grid grid-cols-1 md:grid-cols-3 gap-5  bg-cover bg-center rounded-xl overflow-hidden p-6 lg:p-10 mb-20 relative text-white" :style="{
-      backgroundImage: `url(${home?.acf?.counter?.background?.url})`,
-    }"
-  >
-    <Counter
-      v-for="(item, i) in home?.acf?.counter?.item"
-      :key="i"
-      :label="item.caption"
-      :value="item.number"
-    />
-  </section>
+   
   </Container>
   </div>
 </template>

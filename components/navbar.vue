@@ -10,15 +10,15 @@
   >
     <!-- Top Container -->
     <Container
-      class="py-2 flex flex-col gap-4"
-      :class="{ 'sticky top-0 z-50 bg-white lg:bg-transparent': isSticky }"
+      class="py-2 flex flex-col gap-4  bg-white "
+      :class="{ 'sticky top-0 z-50 ': isSticky }"
     >
       <div class="flex justify-between items-center">
         <NuxtLink to="/" class="flex items-center gap-2 z-50">
-          <img src="/img/logo-transparent.png" alt="logo" class="h-7 lg:h-10 shrink-0 object-contain" />
+          <img src="/img/logo-transparent.png" alt="logo" class="h-7 lg:h-12 shrink-0 object-contain" />
         </NuxtLink>
 
-        <img src="/img/ojk.png" alt="logo" class="h-5 lg:h-10 shrink-0 object-contain" />
+        <img src="/img/logo-ojk.jpg" alt="logo" class="h-5 lg:h-10 shrink-0 object-contain" />
         <button @click="mobileMenu = !mobileMenu" class="lg:hidden">
           <Icon name="line-md:close-to-menu-alt-transition" class="text-3xl text-primary" />
         </button>
@@ -76,16 +76,7 @@
                 </li>
               </ul>
             </li>
-            <li>
-              <a href="linkedin.com" class="flex items-center gap-2">
-                <Icon name="mdi:linkedin" class="text-2xl" />
-              </a>
-            </li>
-            <li>
-              <a href="x.com" class="flex items-center gap-2">
-                <Icon name="line-md:twitter-x" class="text-xl" />
-              </a>
-            </li>
+     
           </ul>
         </nav>
       </Container>

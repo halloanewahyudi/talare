@@ -9,7 +9,7 @@
       />
 
       <section class="mb-16">
-        <div v-html="about?.content">
+        <div v-html="about?.content" class="content">
           
         </div>
 
@@ -55,4 +55,8 @@ onMounted(() => {
     }); */
 </script>
 
-<style></style>
+<style>
+ .content p{
+  text-align: justify;
+ }
+</style>
