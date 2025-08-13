@@ -44,7 +44,7 @@
               class="text-4xl text-primary group-hover:scale-125 hover:-animate-bounce duration-300"
             />
             <h4 class="text-lg font-bold mt-2 mb-2" v-html="item.title"></h4>
-            <div v-html="item.description" class="text-gray-700"></div>
+            <div v-html="item.description" class="text-gray-700 text-justify"></div>
           </div>
         </div>
       </div>

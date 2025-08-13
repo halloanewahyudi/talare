@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-h-[380px] py-20 px-6 lg:px-10 flex flex-col justify-center bg-cover bg-no-repeat bg-center rounded-xl bg-primary text-white relative overflow-hidden"
+    class="min-h-[380px] py-20 px-6 lg:px-10 flex flex-col justify-end bg-cover bg-no-repeat bg-center rounded-xl bg-primary text-white relative overflow-hidden"
     :style="`background-image: url(${props.bg})`"
   >
     <div class="absolute inset-0 bg-gradient-to-tr from-black/75 to-transparent"></div>

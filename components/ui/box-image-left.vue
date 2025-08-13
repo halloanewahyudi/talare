@@ -4,7 +4,7 @@
     <div class="box-content">
       <h4 class="text-2xl lg:text-primary lg:text-4xl font-bold mb-3">{{ props.title }}</h4>
        <GsapFadeUp>
-      <div v-html="props.description" class="text"></div>
+      <div v-html="props.description" class="text text-justify"></div>
       </GsapFadeUp>
       <slot />
     </div>
