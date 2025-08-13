@@ -42,11 +42,11 @@ export const useMenu = () => {
       children:[
 
         {
-          name:'Facultative',
+          name:'Facultative Reinsurance',
           path: productMenu.value[0].path
         },
         {
-          name:'Treaty ',
+          name:'Treaty Reinsurance',
           path:'/treaty'
         },
         {

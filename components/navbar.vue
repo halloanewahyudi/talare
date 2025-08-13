@@ -155,7 +155,7 @@ const { progress } = useLoadingIndicator({
   @apply w-2 h-2 bg-[var(--color-secondary)] rounded-full;
 }
 .sub-menu {
-  @apply relative lg:absolute hidden top-full group-hover:top-full group-hover:flex flex-col gap-2 lg:bg-gradient-to-b from-gray-200 via-gray-300 to-gray-100 rounded-b-xl duration-300 ease-in-out lg:w-[200px] lg:p-4 border border-gray-200 border-t-0;
+  @apply relative lg:absolute hidden top-full group-hover:top-full group-hover:flex flex-col gap-2 lg:bg-gradient-to-b from-gray-200 via-gray-300 to-gray-100 rounded-b-xl duration-300 ease-in-out lg:w-[230px] lg:p-4 border border-gray-200 border-t-0;
 }
 .sub-menu-open {
   @apply block;
