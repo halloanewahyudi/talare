@@ -61,8 +61,8 @@
 useSeo({
   title: 'PT Tala Reinsurance Brokers',
   description: 'full service international reinsurance intermediary companies in Indonesia.',
-  keywords: 'berita, informasi, talare',
-  image: 'https://contoh.com/images/seo-nuxt3.png',
+  keywords: 'Reinsurance, Reinsurance Brokers, talare',
+  image: '/img/bg-hero.jpg',
   type: 'article'
 })
 const baseUrl = useRuntimeConfig().public.baseUrl;

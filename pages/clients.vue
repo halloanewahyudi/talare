@@ -33,7 +33,7 @@
             class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 justify-center items-center divide-gray-200 bg-white rounded-xl border border-gray-200"
           >
             <div v-for="item in currentTabData" :key="item.id" class="p-4">
-              <img :src="item?.featured_image" alt="" class="object-contain h-20 mx-auto transition-transform duration-300 hover:scale-110" />
+              <img :src="item?.url" alt="" class="object-contain h-20 mx-auto transition-transform duration-300 hover:scale-110" />
             </div>
           </div>
         </div>
@@ -49,22 +49,22 @@ import { ref, computed } from 'vue';
 const tabs = [
   { id: 'ic', name: 'Insurance Company' },
   { id: 'rc', name: 'Reinsurance Company' },
-  { id: 'jb', name: 'Joint Brokers' }
+  { id: 'jb', name: 'Strategic Patners' }
 ];
 
 const activeTab = ref('ic');
 
 // Fetch data
-const { data: ic, status: icStatus } = await useApi("/posts/partner?per_page=100&taxonomy=client-category&term=insurance-company");
-const { data: jb, status: jbStatus } = await useApi("/posts/partner?per_page=100&taxonomy=client-category&term=joint-brokers");
-const { data: rc, status: rcStatus } = await useApi("/posts/partner?per_page=100&taxonomy=client-category&term=reinsurance-company");
+//const { data: ic, status: icStatus } = await useApi("/posts/partner?per_page=100&taxonomy=client-category&term=insurance-company");
+//const { data: jb, status: jbStatus } = await useApi("/posts/partner?per_page=100&taxonomy=client-category&term=joint-brokers");
+//const { data: rc, status: rcStatus } = await useApi("/posts/partner?per_page=100&taxonomy=client-category&term=reinsurance-company");
 const { data: clients, status: clientsStatus } = await useApi("/content/clients");
 // Computed properties for active tab
 const currentTabData = computed(() => {
   switch (activeTab.value) {
-    case 'ic': return ic.value || [];
-    case 'rc': return rc.value || [];
-    case 'jb': return jb.value || [];
+    case 'ic': return clients.value?.acf?.insurance_company || [];
+    case 'rc': return clients.value?.acf?.reinsurance_company || [];
+    case 'jb': return clients.value?.acf?.strategic_patners || [];
     default: return [];
   }
 });

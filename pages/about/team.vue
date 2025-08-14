@@ -88,7 +88,13 @@
 </template>
 
 <script setup lang="ts">
-
+useSeo({
+  title: 'Management PT Tala Reinsurance Brokers',
+  description: 'full service international reinsurance intermediary companies in Indonesia.',
+  keywords: 'Reinsurance, Reinsurance Brokers, talare',
+  image: '/img/bg-hero.jpg',
+  type: 'page'
+})
 
 const { data:management, pending, error } = await useApi("/posts/team?taxonomy=team-category&term=management");
 const {data:staff, pending:staffPending, error:staffError} = await useApi("/posts/team?taxonomy=team-category&term=staff");
