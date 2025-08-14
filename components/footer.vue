@@ -32,7 +32,7 @@
                 <Icon name="si:mail-line" class="text-xl" />
                 <span class="text-sm"> Talare@tala-re.com </span>
               </a>
-              <a href="#" class="flex gap-1">
+              <a href="https://www.instagram.com/wearetalare/" target="_blank" class="flex gap-1">
                 <Icon name="famicons:logo-instagram" class="text-xl" />
                 <span class="text-sm">wearetalare</span>
               </a>
