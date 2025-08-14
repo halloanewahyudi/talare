@@ -4,9 +4,9 @@
     <div v-else>
       <Container>
         <UiPageHader
-          :title="pageTeam.title"
-          :subtitle="pageTeam.acf.sub_title"
-          :bg="pageTeam.featured_image"
+          :title="pageTeam?.title"
+          :subtitle="pageTeam?.acf?.sub_title"
+          :bg="pageTeam?.featured_image"
           class="mb-20"
         />
           
@@ -76,7 +76,6 @@
         ref="popupRef"
         class="max-w-[480px] w-full max-h-[480px] h-full rounded-xl overflow-hidden bg-white p-2 shadow-2xl"
       >
-    
         <span class="absolute bottom-4 left-4 text-white">{{ selectedItem?.title }}</span>
       </div>
 

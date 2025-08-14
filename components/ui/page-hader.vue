@@ -8,7 +8,7 @@
       <h1 class="text-4xl lg:text-6xl font-bold text-white">
         <span class="font-light" v-html="props.title"> </span>
       </h1>
-      <p class="text-xl">{{ props.subtitle }}</p>
+      <p class="text-xl hidden">{{ props.subtitle }}</p>
     </div>
   </div>
 </template>

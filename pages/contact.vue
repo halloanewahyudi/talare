@@ -14,7 +14,7 @@
         >
           {{ contact?.title }}
         </h1>
-        <p>{{ contact?.acf?.sub_title }}</p>
+        <p class="text-xl hidden" >{{ contact?.acf?.sub_title }}</p>
         </div>
        
       </div>
