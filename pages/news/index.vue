@@ -1,8 +1,11 @@
 <script lang="ts" setup>
-import { ref, watch } from "vue";
-
-// Definisikan slug kategori yang ingin digunakan
-
+useSeo({
+  title: 'News Talare',
+  description: 'Informasi berita terbaru tentang Talare',
+  keywords: 'berita, informasi, talare',
+  image: 'https://contoh.com/images/seo-nuxt3.png',
+  type: 'article'
+})
 
 const posts = ref<any[]>([]);
 const searchQuery = ref("");
@@ -66,6 +69,7 @@ const {data:news , status} = await useApi("/content/news")
 
 <template>
   <div>
+
     <Container>
 
     <UiPageHader :title="news?.title" :subtitle="news?.acf.sub_title" :bg="news?.featured_image" class="mb-10"/>
@@ -144,4 +148,3 @@ const {data:news , status} = await useApi("/content/news")
 
 </template>
 
-@pagi814

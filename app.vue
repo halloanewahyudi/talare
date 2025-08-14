@@ -8,6 +8,14 @@
 <script setup lang="ts">
 import gsap from 'gsap';
 
+ defineAppConfig({
+  siteName: 'Nama Situs',
+  titleSeparator: '·',
+  defaultDescription: 'Deskripsi default situs.',
+  defaultKeywords: 'nuxt, vue, tailwind, typescript',
+  defaultOgImage: '/og-default.jpg'
+})
+
 </script>
 
 

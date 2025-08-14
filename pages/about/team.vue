@@ -9,8 +9,8 @@
           :bg="pageTeam.featured_image"
           class="mb-20"
         />
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 mb-20">
+          
+           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-max mx-auto justify-center items-center   gap-6 mb-20">
           <div
             v-for="(item, index) in team"
             :key="item.id"
@@ -18,7 +18,7 @@
             @mouseleave="hovered[index] = false"
           >
             <div
-              class="bg-cover bg-center p-4 w-full h-[300px] bg-primary rounded-2xl overflow-hidden relative transition-all duration-300 flex flex-col justify-end"
+              class="bg-cover bg-center shrink-0 p-4 w-full max-w-[260px] h-[300px] bg-primary rounded-2xl overflow-hidden relative transition-all duration-300 flex flex-col justify-end"
               :style="{
                 backgroundImage: `url(${
                   hovered[index] ? item.acf.second_image.url : item.featured_image
@@ -35,6 +35,8 @@
             </div>
           </div>
         </div>
+         
+       
       </Container>
     </div>
   </div>
@@ -44,7 +46,7 @@
 import { useApi } from "~/composables/api";
 import { ref, computed } from "vue";
 
-const { data, pending, error } = await useApi("/posts/team");
+const { data:team, pending, error } = await useApi("/posts/team?taxonomy=team-category&term=management");
 const team = computed(() => data.value || []);
 const status = computed(() =>
   pending.value ? "pending" : error.value ? "error" : "success"

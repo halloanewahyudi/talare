@@ -58,22 +58,13 @@
 </template>
 
 <script lang="ts" setup>
-
-
 useSeo({
-  title: 'Tips SEO untuk Nuxt 3',
-  description: 'Pelajari cara mengoptimalkan SEO di Nuxt 3 dengan mudah.',
-  keywords: 'Nuxt 3, SEO, Vue, Tailwind CSS',
+  title: 'PT Tala Reinsurance Brokers',
+  description: 'full service international reinsurance intermediary companies in Indonesia.',
+  keywords: 'berita, informasi, talare',
   image: 'https://contoh.com/images/seo-nuxt3.png',
   type: 'article'
 })
-
-const langActive = ref("EN");
-const lang = ref(["EN", "ID"]);
-const toggleLang = () => {
-  langActive.value = lang.value[lang.value.indexOf(langActive.value) + 1];
-};
-
 const baseUrl = useRuntimeConfig().public.baseUrl;
  const { data:home, pending, error, refresh } = await useFetch(baseUrl+'/api/v1/content/home')
 

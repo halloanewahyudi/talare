@@ -19,7 +19,7 @@
              <img
                 :src="item.featured_image"
                 alt=""
-                class="w-full h-[380px] object-cover object-top group-hover:scale-110 duration-300 bg-gradient-to-b from-primary to-blue-400"
+                class="w-full h-[380px] object-cover object-center group-hover:scale-110 duration-300 bg-gradient-to-b from-primary to-blue-400"
               />
             </div>
              
