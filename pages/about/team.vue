@@ -47,10 +47,7 @@ import { useApi } from "~/composables/api";
 import { ref, computed } from "vue";
 
 const { data:team, pending, error } = await useApi("/posts/team?taxonomy=team-category&term=management");
-const team = computed(() => data.value || []);
-const status = computed(() =>
-  pending.value ? "pending" : error.value ? "error" : "success"
-);
+
 
 const hovered = ref<Record<number, boolean>>({});
 
