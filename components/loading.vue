@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex justify-center items-center h-screen bg-white/80">
+    <div class="flex justify-center items-center py-20 min-h-[300px] ">
     <icon name="line-md:loading-twotone-loop" class=" text-4xl" />
     </div>
   </div>

@@ -84,7 +84,7 @@ const {data:news , status} = await useApi("/content/news")
 
     <!-- List Post -->
     <div v-if="loading" class="text-center w-full p-10 flex justify-center items-center">
-       loading...
+       <Loading />
     </div>
     <div v-else>
       <div v-if="posts.length === 0" class="text-center text-gray-500">

@@ -1,5 +1,6 @@
 <template>
   <div class="">
+   <div v-if="status === 'pending'"><Loading /></div>
     <!-- Header Produk -->
     <div class="product-header mb-10">
       <h1
@@ -19,7 +20,7 @@
     />
   
     <!-- Konten Produk -->
-    <div v-if="product?.content" v-html="cleanContent"  class="product-content"></div>
+    <div v-if="product?.content" v-html="product.content"  class="product-content"></div>
   </div>
 </template>
 
@@ -31,7 +32,7 @@ definePageMeta({
 const route = useRoute()
 const { productMenu } = useProductMenu()
 
-const cleanContent = ref('')
+//const cleanContent = ref('')
 
 onMounted(() => {
   if (!product.value?.content) return
@@ -44,11 +45,11 @@ onMounted(() => {
     el.removeAttribute('style')
   })
 
-  cleanContent.value = doc.body.innerHTML
+ // cleanContent.value = doc.body.innerHTML
 })
 
 // Ambil data produk dari API
-const { data: product } = await useApi(`/content/${route.params.slug}`)
+const { data: product, status } = await useApi(`/content/${route.params.slug}`)
 
 </script>
 
@@ -60,16 +61,7 @@ const { data: product } = await useApi(`/content/${route.params.slug}`)
   text-transform:capitalize;
 }
 
-/* .product-content ul {
-  list-style: none ;
-  padding-left: 1.5rem;
-  margin-left: 0;
-}
 
-.product-content li {
-  padding-left: 0; 
-
-} */
 
 
 </style>
