@@ -1,4 +1,6 @@
 // composables/useApi.ts
+import { useFetch } from '#app';
+
 export function useApi<T>(
   endpoint: string,
   options: {
@@ -9,15 +11,18 @@ export function useApi<T>(
     immediate?: boolean
   } = {}
 ) {
-  const config = useRuntimeConfig()
-  const url = config.public.baseUrl + '/api/v1' + endpoint
+  const config = useRuntimeConfig();
+  const url = config.public.baseUrl + '/api/v1' + endpoint;
 
-  const fetcher = options.lazy ? useLazyFetch : useFetch
+  const fetcher = options.lazy ? useLazyFetch : useFetch;
 
-  return fetcher<T>(url, {
+  // Pastikan properti response di-destructure dengan benar
+  const { data, response, ...rest } = fetcher<T>(url, {
     method: options.method || 'GET',
     query: options.query,
     body: options.body,
     immediate: options.immediate ?? true,
-  })
+  });
+
+  return { data, response, ...rest };
 }

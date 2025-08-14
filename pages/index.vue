@@ -37,7 +37,7 @@
           </div>
    <GsapFadeUp>
           <div
-            class="relative p-6 lg:p-10 rounded-xl bg-white/50 backdrop-blur-lg flex flex-col gap-5 border border-neutral-200 lg:shadow-2xl h-max"
+            class="relative p-6 lg:p-10 rounded-xl bg-white/90 backdrop-blur-lg flex flex-col gap-5 border border-neutral-200 lg:shadow-2xl h-max"
           >
             <h3 class="text-2xl font-bold text-primary" v-html="home?.acf?.a_brief_of_talare?.title">
              

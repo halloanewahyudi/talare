@@ -6,11 +6,11 @@
   <header
     ref="navbarRef"
     class="fixed top-0 left-0 w-full z-50 transition-transform duration-300 "
-    :class="isVisible ? 'translate-y-0 bg-white/50 backdrop-blur-2xl' : '-translate-y-full lg:top-12'"
+    :class="isVisible ? 'translate-y-0 bg-white/80 backdrop-blur-2xl' : '-translate-y-full lg:top-12'"
   >
     <!-- Top Container -->
     <Container
-      class="py-2 flex flex-col gap-4  bg-white "
+      class="py-2 flex flex-col gap-4  "
       :class="{ 'sticky top-0 z-50 ': isSticky }"
     >
       <div class="flex justify-between items-center">
@@ -18,7 +18,7 @@
           <img src="/img/logo-transparent.png" alt="logo" class="h-7 lg:h-12 shrink-0 object-contain" />
         </NuxtLink>
 
-        <img src="/img/logo-ojk.jpg" alt="logo" class="h-5 lg:h-10 shrink-0 object-contain" />
+        <img src="/img/logo-ojk-1.png" alt="logo" class="h-5 lg:h-10 shrink-0 object-contain" />
         <button @click="mobileMenu = !mobileMenu" class="lg:hidden">
           <Icon name="line-md:close-to-menu-alt-transition" class="text-3xl text-primary" />
         </button>

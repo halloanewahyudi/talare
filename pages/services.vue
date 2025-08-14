@@ -17,7 +17,7 @@
       <img :src="item?.image?.url" alt="" class="w-full max-h-[300px] h-full object-cover object-center rounded-xl">
       <div>
       <h4 class="text-2xl lg:text-primary lg:text-4xl font-bold mb-3">{{ item?.services_item?.title }}</h4>
-      <p>{{ item?.services_item?.description }}</p>
+      <div class="text-justify">{{ item?.services_item?.description }}</div>
       </div>
      </div>
     </div>
