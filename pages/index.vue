@@ -1,14 +1,15 @@
 <template>
   <div>
     <Container>
+  
     <!-- Basic Slider -->
     <Splide :options="{ rewind: true, arrows: false, pagination: false }" aria-label="Basic Example">
    
        <SplideSlide class="w-full"  v-for="value in home?.acf?.slideshow" :key="slide">
 
           <Hero :bg="value?.slide?.slide_image?.url" class="rounded-xl overflow-hidden mb-20 ">
-        <div class="max-w-[600px] w-full flex flex-col justify-end h-full">
-          <h1 class="text-4xl lg:text-6xl font-bold text-white" v-html="value?.slide?.slide_title"> </h1>
+        <div class="max-w-[680px] w-full ">
+          <h1 class="text-4xl lg:text-5xl font-bold text-white" v-html="value?.slide?.slide_title"> </h1>
           <div class="text-2xl text-white" v-html="value?.slide?.slide_description"></div>
         </div>
       </Hero>
@@ -40,8 +41,7 @@
             class="relative p-6 lg:p-10 rounded-xl bg-white/90 backdrop-blur-lg flex flex-col gap-5 border border-neutral-200 lg:shadow-2xl h-max"
           >
             <h3 class="text-2xl font-bold text-primary" v-html="home?.acf?.a_brief_of_talare?.title">
-             
-            </h3>
+              </h3>
             <div v-html="home?.acf?.a_brief_of_talare?.description" class="text-gray-700"></div>
 
             <NuxtLink :to="home.acf?.a_brief_of_talare?.button?.url" class="btn btn-primary self-end">
@@ -58,6 +58,16 @@
 </template>
 
 <script lang="ts" setup>
+
+
+useSeo({
+  title: 'Tips SEO untuk Nuxt 3',
+  description: 'Pelajari cara mengoptimalkan SEO di Nuxt 3 dengan mudah.',
+  keywords: 'Nuxt 3, SEO, Vue, Tailwind CSS',
+  image: 'https://contoh.com/images/seo-nuxt3.png',
+  type: 'article'
+})
+
 const langActive = ref("EN");
 const lang = ref(["EN", "ID"]);
 const toggleLang = () => {

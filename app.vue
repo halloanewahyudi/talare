@@ -8,8 +8,9 @@
 <script setup lang="ts">
 import gsap from 'gsap';
 
-
 </script>
+
+
 <style>
 .page-enter-active,
 .page-leave-active {
