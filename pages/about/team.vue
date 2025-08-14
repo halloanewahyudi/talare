@@ -16,6 +16,7 @@
             :key="item.id"
             @mouseenter="hovered[index] = true"
             @mouseleave="hovered[index] = false"
+            @click="selectItem(item)"
           >
             <div
               class="bg-cover bg-center shrink-0 p-4 w-full max-w-[260px] h-[300px] bg-primary rounded-2xl overflow-hidden relative transition-all duration-300 flex flex-col justify-end"
@@ -61,7 +62,26 @@
             </div>
           </div>
          </div>
-       
+            <!-- POPUP -->
+    <div
+      v-if="selectedIndex !== null"
+      class="fixed inset-0 w-full h-full flex justify-center items-center bg-white/90 z-50"
+    >
+    <button @click="closePopup" class="absolute top-4 right-4">
+        <icon name="line-md:close" class="text-3xl text-red-500" />
+      </button>
+
+
+      <div
+        ref="popupRef"
+        class="max-w-[480px] w-full max-h-[480px] h-full rounded-xl overflow-hidden bg-white p-2 shadow-2xl"
+      >
+    
+        <span class="absolute bottom-4 left-4 text-white">{{ selectedItem?.title }}</span>
+      </div>
+
+    
+    </div>
       </Container>
     </div>
   </div>
@@ -76,4 +96,35 @@ const {data:staff, pending:staffPending, error:staffError} = await useApi("/post
 const hovered = ref<Record<number, boolean>>({});
 
 const { data: pageTeam } = await useApi("/content/team");
+
+
+const popupRef = ref<HTMLElement | null>(null);
+const selectedItem = ref<Record<string, any> | null>(null);
+
+const selectedIndex = ref<number | null>(null);
+
+// animasi 
+
+const animateJelly = () => {
+  if (!popupRef.value) return
+  $gsap.gsap.fromTo(
+    popupRef.value,
+    { scale: 0.8, rotate: -3 },
+    {
+      scale: 1,
+      rotate: 0,
+      duration: 0.8,
+      ease: "elastic.out(1, 0.5)",
+    }
+  )
+}
+
+const selectItem = (index: number) => {
+  selectedIndex.value = index
+  nextTick(() => animateJelly())
+}
+
+const closePopup = () => {
+  selectedIndex.value = null
+}
 </script>
