@@ -90,6 +90,7 @@
         
         </div>
       </div>
+      <hr class="border-t border-gray-300 my-4">
         
        <div v-html="selectedItem?.acf?.team_description"></div>
         
