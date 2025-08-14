@@ -30,7 +30,7 @@
               </div>
               <a href="mailto:Talare@tala-re.com" class="flex gap-1">
                 <Icon name="si:mail-line" class="text-xl" />
-                <span class="text-sm"> Talare@tala-re.com </span>
+                <span class="text-sm"> talare@tala-re.com </span>
               </a>
               <a href="https://www.instagram.com/wearetalare/" target="_blank" class="flex gap-1">
                 <Icon name="famicons:logo-instagram" class="text-xl" />

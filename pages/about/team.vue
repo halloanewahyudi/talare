@@ -43,6 +43,7 @@
             :key="item.id"
             @mouseenter="hovered[index] = true"
             @mouseleave="hovered[index] = false"
+            @click="selectItem(item)"
           >
             <div
               class="bg-cover bg-center shrink-0 p-4 w-full max-w-[260px] h-[300px] mx-auto bg-primary rounded-2xl overflow-hidden relative transition-all duration-300 flex flex-col justify-end"
@@ -64,22 +65,36 @@
          </div>
             <!-- POPUP -->
     <div
-      v-if="selectedIndex !== null"
-      class="fixed inset-0 w-full h-full flex justify-center items-center bg-white/90 z-50"
+      v-if="selectedItem"
+      class="fixed inset-0 w-full h-full flex justify-center items-center bg-primary/90 z-50"
     >
-    <button @click="closePopup" class="absolute top-4 right-4">
-        <icon name="line-md:close" class="text-3xl text-red-500" />
-      </button>
+ 
 
 
       <div
         ref="popupRef"
-        class="max-w-[480px] w-full max-h-[480px] h-full rounded-xl overflow-hidden bg-white p-2 shadow-2xl"
+        class="max-w-[480px] w-full max-h-[480px] h-full rounded-xl relative overflow-hidden bg-white p-6 shadow-2xl"
       >
-        <span class="absolute bottom-4 left-4 text-white">{{ selectedItem?.title }}</span>
+         <button @click="closePopup" class="absolute top-4 right-4">
+        <icon name="line-md:close" class="text-xl text-secondary bg-white rounded-full" />
+      </button>
+      <div class="flex gap-2 items-center">
+      <img
+          :src="selectedItem?.acf?.second_image.url"
+          :alt="selectedItem?.title"
+          class="h-24 w-24 object-cover rounded-full shrink-0 bg-primary"
+        />
+           <div class="">
+        <h4 class="text-sm mb-1">{{ selectedItem?.title }}</h4>
+        <p class="text-xs mb-0 pb-0">{{ selectedItem?.acf?.position }}</p>
+        
+        </div>
+      </div>
+        
+       <div v-html="selectedItem?.acf?.team_description"></div>
+        
       </div>
 
-    
     </div>
       </Container>
     </div>
@@ -109,12 +124,12 @@ const selectedItem = ref<Record<string, any> | null>(null);
 const selectedIndex = ref<number | null>(null);
 
 // animasi 
-
+const { $gsap } = useNuxtApp()
 const animateJelly = () => {
   if (!popupRef.value) return
   $gsap.gsap.fromTo(
     popupRef.value,
-    { scale: 0.8, rotate: -3 },
+    { scale: 0.8, rotate: -2 },
     {
       scale: 1,
       rotate: 0,
@@ -124,12 +139,13 @@ const animateJelly = () => {
   )
 }
 
-const selectItem = (index: number) => {
+const selectItem = (item: Record<string, any>, index: number) => {
+  selectedItem.value = item
   selectedIndex.value = index
   nextTick(() => animateJelly())
 }
 
 const closePopup = () => {
-  selectedIndex.value = null
+  selectedItem.value = null
 }
 </script>
