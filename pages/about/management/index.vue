@@ -8,22 +8,22 @@
         class="mb-20"
       />
 
-      <div class="flex flex-col gap-5">
+      <div class="flex flex-col gap-6 lg:gap-10 mb-20">
         <!--  management wrapper -->
         <div
-          class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 items-center max-w-max mx-auto h-full mb-20"
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10  max-w-max mx-auto h-full"
         >
           <div
             v-for="item in komisaris"
             :key="item"
-            class="w-full max-w-[260px] h-[300px]"
+            class="w-[260px]"
           >
             <NuxtLink
               :to="{
                 name: 'about-management-slug',
                 params: { slug: item?.slug },
               }"
-              class="group"
+              class="group flex flex-col gap-2"
             >
               <div
                 class="relative h-[300px] w-full overflow-hidden rounded-xl border border-neutral-400 group-hover:shadow-xl mb-3"
@@ -31,33 +31,35 @@
                 <img
                   :src="item?.featured_image"
                   alt=""
-                  class="w-full h-[380px] object-cover object-center group-hover:scale-110 duration-300 bg-gradient-to-b from-primary to-blue-400"
+                  class="w-full h-[300px] object-cover object-center group-hover:scale-110 duration-300 bg-gradient-to-b from-primary to-blue-400"
                 />
               </div>
-
-              <h4
+               <div>
+               <h4
                 class="font-medium group-hover:text-primary duration-300 mb-1"
                 v-html="item?.title"
               ></h4>
               <div v-html="item?.acf?.position" class="text-sm text-gray-600"></div>
+               </div>
+              
             </NuxtLink>
           </div>
         </div>
 
         <div
-          class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 items-center max-w-max mx-auto mb-20"
+          class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10  max-w-max mx-auto "
         >
           <div
             v-for="item in direktur"
             :key="item"
-            class="w-full max-w-[260px] h-[300px]"
+            class="w-full max-w-[260px] "
           >
             <NuxtLink
               :to="{
                 name: 'about-management-slug',
                 params: { slug: item?.slug },
               }"
-              class="group"
+              class="group flex flex-col gap-2"
             >
               <div
                 class="relative h-[300px] w-full overflow-hidden rounded-xl border border-neutral-400 group-hover:shadow-xl mb-3"
@@ -65,22 +67,22 @@
                 <img
                   :src="item?.featured_image"
                   alt=""
-                  class="w-full h-[380px] object-cover object-center group-hover:scale-110 duration-300 bg-gradient-to-b from-primary to-blue-400"
+                  class="w-full h-[300px] object-cover object-center group-hover:scale-110 duration-300 bg-gradient-to-b from-primary to-blue-400"
                 />
               </div>
-
+              <div>
               <h4
                 class="font-medium group-hover:text-primary duration-300 mb-1"
                 v-html="item?.title"
               ></h4>
               <div v-html="item?.acf?.position" class="text-sm text-gray-600"></div>
+              </div>
+              
             </NuxtLink>
           </div>
         </div>
       </div>
       <!-- end management wrapper -->
-
-      <div class="h-20 w-full"></div>
     </Container>
   </div>
 </template>
