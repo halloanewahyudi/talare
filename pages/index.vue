@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Container>
+    <Container> 
   
     <!-- Basic Slider -->
     <Splide :options="{ rewind: true, arrows: false, pagination: false }" aria-label="Basic Example">
