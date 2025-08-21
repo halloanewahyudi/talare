@@ -18,6 +18,8 @@
             :key="item.id"
             @mouseenter="hovered[index] = true"
             @mouseleave="hovered[index] = false"
+           @click="selectItem(item)"
+            class="cursor-pointer"
           >
             <div
               class="bg-cover bg-center shrink-0 p-4 w-full max-w-[260px] h-[300px] bg-primary rounded-2xl overflow-hidden relative transition-all duration-300 flex flex-col justify-end"
@@ -33,25 +35,6 @@
               <div class="text-white relative z-10">
                 <h4 class="font-semibold text-white text-sm">{{ item.title }}</h4>
                 <p class="text-xs mb-0 pb-0">{{ item.acf.position }}</p>
-
-                  <div
-                    class="text-xs border-t border-gray-300/50 pt-1 mt-1"
-                    :class="
-                      hovered[index] ? 'opacity-100 duration-300' : 'hidden opacity-0'
-                    "
-                  >
-                    <!-- usia/pengalaman -->
-                    <div class="flex items-center gap-1">
-                      <span>Usia</span
-                      ><span>{{ item.acf.team_description.usia }} Tahun</span>
-                    </div>
-                    <div class="flex items-center gap-1">
-                      <span>Pengalaman</span
-                      ><span>{{ item.acf.team_description.pengalaman }} Tahun</span>
-                    </div>
-                  </div>
-                  <!-- end usia / pengalaman -->
-           
               </div>
             </div>
           </div>
@@ -65,6 +48,8 @@
             :key="item.id"
             @mouseenter="hovered[index] = true"
             @mouseleave="hovered[index] = false"
+            @click="selectItem(item)"
+            class="cursor-pointer"
           >
             <div
               class="bg-cover bg-center shrink-0 p-4 w-full max-w-[260px] h-[300px] mx-auto bg-primary rounded-2xl overflow-hidden relative transition-all duration-300 flex flex-col justify-end"
@@ -80,23 +65,12 @@
               <div class="text-white relative z-10">
                 <h4 class="font-semibold text-white text-sm">{{ item.title }}</h4>
                 <p class="text-xs mb-0 pb-0">{{ item.acf.position }}</p>
-                <div class="text-xs border-t border-gray-300/50 pt-1 mt-1" :class="
-                      hovered[index] ? 'opacity-100 duration-300' : 'hidden opacity-0'" >
-                  <!-- usia/pengalaman -->
-                  <div class="flex items-center gap-1">
-                    <span>Usia</span
-                    ><span>{{ item.acf.team_description.usia }} Tahun</span>
-                  </div>
-                  <div class="flex items-center gap-1">
-                    <span>Pengalaman</span
-                    ><span>{{ item.acf.team_description.pengalaman }} Tahun</span>
-                  </div>
-                </div>
-                <!-- end usia / pengalaman -->
+                  
               </div>
             </div>
           </div>
         </div>
+
         <!-- POPUP -->
         <div
           v-if="selectedItem"
@@ -105,6 +79,7 @@
           <div
             ref="popupRef"
             class="max-w-[480px] w-full max-h-[480px] h-full rounded-xl relative overflow-hidden bg-white p-6 shadow-2xl"
+        
           >
             <button @click="closePopup" class="absolute top-4 right-4">
               <icon
@@ -125,7 +100,7 @@
             </div>
             <hr class="border-t border-gray-300 my-4" />
 
-            <div v-html="selectedItem?.acf?.team_description"></div>
+            <div v-html="selectedItem?.acf?.description"></div>
           </div>
         </div>
       </Container>
