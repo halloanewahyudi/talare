@@ -26,7 +26,7 @@
       </div>
 
       <div class="mb-16">
-    <h4 class="text-2xl lg:text-primary lg:text-4xl font-bold mb-6">Whate we believe </h4>
+    <h4 class="text-2xl lg:text-primary lg:text-4xl font-bold mb-6">What we Believe </h4>
     <div class="flex h-[400px] overflow-hidden rounded-lg">
       <div
         v-for="(item, index) in coreValuesArray"
