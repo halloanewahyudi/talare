@@ -19,8 +19,8 @@
        
       </div>
       <div class="md:col-span-2 lg:col-span-1">
-        <div class="p-6 lg:p-10">
-          <form @submit.prevent="submit" class="md:pt-16 max-w-[480px] mx-auto">
+        <div class="p-6 lg:p-10 flex flex-col justify-center items-center">
+          <form @submit.prevent="submit" class="md:pt-16 max-w-[480px] w-full mx-auto">
             <p>Contact us, please fill out the form below.</p>
             <div class="flex flex-col gap-5">
               <input type="text" v-model="form.name" placeholder="Name" class="input" />
@@ -96,7 +96,7 @@ const submit = async () => {
       method: "POST",
       body: {
         to: "hallo.anewahyudi@gmail.com",
-        subject: "Pesan dari situs kamu",
+        subject: "Contact Form",
         message: htmlMessage,
       },
     });
