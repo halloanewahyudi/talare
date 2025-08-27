@@ -61,7 +61,7 @@
   @apply list-disc pl-4 ;
 }
 
-.wp-block-list .item-title {
+ .item-title {
   @apply list-none text-xl text-primary;
 }
 

@@ -1,11 +1,11 @@
 export const useMenu = () => {
 
-  const {productMenu} = useProductMenu();
+  const { productMenu } = useProductMenu();
   const menus = ref([
     {
       name: 'Home',
       path: '/',
-    
+
     },
     {
       name: 'About',
@@ -23,7 +23,7 @@ export const useMenu = () => {
           name: 'Why Choose Us',
           path: '/about/why-choose-us',
         },
-         {
+        {
           name: 'What We Do',
           path: '/about/what-we-do',
         },
@@ -37,29 +37,29 @@ export const useMenu = () => {
         }
       ]
     },
-     {
-      name: 'Products',
-      children:[
-
-        {
-          name:'Facultative Reinsurance',
-          path: productMenu.value[0].path
-        },
-        {
-          name:'Treaty Reinsurance',
-          path:'/treaty'
-        },
-        {
-          name:'Joint Placement',
-          path:'/joint-placement'
-        }
-      ],
-      
-    },
     {
       name: 'Services',
       path: '/services',
     },
+    {
+      name: 'Products',
+      children: [
+          {
+          name: 'Treaty Reinsurance',
+          path: '/treaty'
+        },
+        {
+          name: 'Facultative Reinsurance',
+          path: productMenu.value[0].path
+        },    
+        {
+          name: 'Joint Placement',
+          path: '/joint-placement'
+        }
+      ],
+
+    },
+
     {
       name: 'Clients & Strategic Partners',
       path: '/clients',
