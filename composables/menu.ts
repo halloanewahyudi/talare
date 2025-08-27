@@ -69,7 +69,7 @@ export const useMenu = () => {
       path: '/news',
     },
     {
-      name: 'Galley',
+      name: 'Gallery',
       path: '/gallery',
     },
     {
