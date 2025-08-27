@@ -69,6 +69,10 @@ export const useMenu = () => {
       path: '/news',
     },
     {
+      name: 'Galley',
+      path: '/gallery',
+    },
+    {
       name: 'Contact',
       path: '/contact',
     },
