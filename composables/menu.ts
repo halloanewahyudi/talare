@@ -73,7 +73,7 @@ export const useMenu = () => {
       path: '/gallery',
     },
     {
-      name: 'Contact',
+      name: 'Contact Us',
       path: '/contact',
     },
   ])

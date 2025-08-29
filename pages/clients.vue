@@ -94,7 +94,7 @@ import { ref, computed } from "vue";
 const tabs = [
   { id: "ic", name: "Insurance Company" },
   { id: "rc", name: "Reinsurance Company" },
-  { id: "jb", name: "Strategic Patners" },
+  { id: "jb", name: "Strategic Partners" },
 ];
 
 const activeTab = ref("ic");
