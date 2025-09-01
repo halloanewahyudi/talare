@@ -13,27 +13,27 @@ export const useMenu = () => {
       children: [
         {
           name: 'About Talare',
-          path: '/about',
+          path: '/about'
         },
         {
           name: 'Vision & Mission',
-          path: '/about/vision-mission',
+          path: '/about/vision-mission'
         },
         {
           name: 'Why Choose Us',
-          path: '/about/why-choose-us',
+          path: '/about/why-choose-us'
         },
         {
           name: 'What We Do',
-          path: '/about/what-we-do',
+          path: '/about/what-we-do'
         },
         {
           name: 'Our Management',
-          path: '/about/management',
+          path: '/about/management'
         },
         {
           name: 'Our Team',
-          path: '/about/team',
+          path: '/about/team'
         }
       ]
     },
@@ -43,6 +43,7 @@ export const useMenu = () => {
     },
     {
       name: 'Products',
+      path: '#',
       children: [
           {
           name: 'Treaty Reinsurance',

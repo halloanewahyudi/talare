@@ -59,17 +59,13 @@
               <ul
                 v-if="menu.children"
                 class="lg:absolute lg:top-full sub-menu"
-                :class="{
-                  'sub-menu-open': activeDropdown === menu.path,
-                  hidden: activeDropdown !== menu.path,
-                  'lg:block lg:mt-0': true
-                }"
               >
                 <li v-for="child in menu.children" :key="child.path">
                   <NuxtLink
                     :to="child.path"
                     class="nav-link text-sm mx-2 text-white hover:text-primary"
-                    @click="mobileMenu = false"
+                    no-prefetch
+                    @click="toggleDropdown(child.path)"
                   >
                     {{ child.name }}
                   </NuxtLink>
@@ -87,11 +83,12 @@
   <main :style="{ paddingTop: navbarHeight + 'px' }">
     <slot />
   </main>
+  
 </template>
 
 <script lang="ts" setup>
 const { menus } = useMenu();
-
+const router = useRouter();
 // State
 const isSticky = ref(false);
 const isVisible = ref(true);
@@ -126,20 +123,29 @@ onMounted(() => {
 
   window.addEventListener("scroll", handleScroll, { passive: true });
   handleScroll();
+
+
+
 });
 
 // Dropdown toggle
-const toggleDropdown = (path: string) => {
-  activeDropdown.value = activeDropdown.value === path ? null : path;
-};
 
 // Progress bar
 const { progress } = useLoadingIndicator({
   duration: 2000,
   throttle: 200,
+  resetDelay: 1000,
   estimatedProgress: (duration, elapsed) =>
     (2 / Math.PI * 100) * Math.atan((elapsed / duration) * 100 / 50)
+  
 });
+
+// hidden sub menu 
+const toggleDropdown = (path: string) => {
+  setTimeout(() => {
+    router.go(path);
+  }, 100);
+};  
 </script>
 
 <style scoped>
