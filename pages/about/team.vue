@@ -19,7 +19,7 @@
             @mouseenter="hovered[index] = true"
             @mouseleave="hovered[index] = false"
            @click="selectItem(item)"
-            class="cursor-pointer"
+            class="cursor-pointer relative"
           >
             <div
               class="bg-cover bg-center shrink-0 p-4 w-full max-w-[260px] h-[300px] bg-primary rounded-2xl overflow-hidden relative transition-all duration-300 flex flex-col justify-end"
@@ -35,6 +35,7 @@
               <div class="text-white relative z-10">
                 <h4 class="font-semibold text-white text-sm">{{ item.title }}</h4>
                 <p class="text-xs mb-0 pb-0">{{ item.acf.position }}</p>
+                <button class="italic text-xs group cursor-pointer bg-primary py-1 px-3 rounded-full mt-3">Read more <Icon name="material-symbols-light:arrow-right-alt group-hover:translate-x-2 duration-300 align-center"></Icon> </button>
               </div>
             </div>
           </div>
@@ -65,7 +66,7 @@
               <div class="text-white relative z-10">
                 <h4 class="font-semibold text-white text-sm">{{ item.title }}</h4>
                 <p class="text-xs mb-0 pb-0">{{ item.acf.position }}</p>
-                  
+                     <button class="italic text-xs group cursor-pointer bg-primary py-1 px-3 rounded-full mt-3">Read more <Icon name="material-symbols-light:arrow-right-alt group-hover:translate-x-2 duration-300 align-center"></Icon> </button>
               </div>
             </div>
           </div>

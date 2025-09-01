@@ -53,8 +53,6 @@ const { data: product, status } = await useApi(`/content/${route.params.slug}`)
 
 </script>
 
-
-
 <style scoped>
 
 .title-case {

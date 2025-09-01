@@ -1,13 +1,13 @@
 <template>
   <div>
-    <Container> 
+    <Container>
   
     <!-- Basic Slider -->
-    <Splide :options="{ rewind: true, arrows: false, pagination: false }" aria-label="Basic Example">
+    <Splide :options="{ rewind: true, arrows: false, pagination: false }" aria-label="Basic Example" class="h-[calc(100vh-150px)]  mb-20 ">
    
-       <SplideSlide class="w-full"  v-for="value in home?.acf?.slideshow" :key="slide">
+       <SplideSlide class="w-full h-[calc(100vh-150px)] rounded-xl overflow-hidden"  v-for="value in home?.acf?.slideshow" :key="slide" >
 
-          <Hero :bg="value?.slide?.slide_image?.url" class="rounded-xl overflow-hidden mb-20 ">
+          <Hero :bg="value?.slide?.slide_image?.url" class="  h-full">
         <div class="max-w-[680px] w-full ">
           <h1 class="text-4xl lg:text-5xl font-bold text-white" v-html="value?.slide?.slide_title"> </h1>
           <div class="text-2xl text-white" v-html="value?.slide?.slide_description"></div>

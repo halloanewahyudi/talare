@@ -60,9 +60,17 @@
 .wp-block-list {
   @apply list-disc pl-4 ;
 }
-
-.wp-block-list .item-title {
-  @apply list-none text-xl text-primary;
+.item-title {
+   @apply list-none;
+}
+ .item-title > strong {
+  @apply  text-xl text-primary;
+}
+.item-title > ul{
+  @apply mt-2 ;
+}
+.item-title > .wp-block-list{
+  @apply flex flex-col gap-2; 
 }
 
 .wp-block-list .item-title ul  li::marker {
@@ -70,8 +78,9 @@
  @apply font-light ml-0 pl-0 mr-2;
 }
 .wp-block-list .item-title .wp-block-list{
-  @apply font-medium ml-0 pl-0 text-base text-gray-700;
+  @apply font-medium ml-0 pl-0 text-base text-gray-700 ;
 }
+
 .wp-block-list .item-title .wp-block-list .wp-block-list {
   @apply pl-4 font-normal;
 }
@@ -117,7 +126,7 @@
 }
 
 .wp-block-group {
-  @apply my-6;
+  @apply my-3;
 }
 
 /* Untuk group yang di-set flex di editor */
@@ -181,4 +190,11 @@
 }
 .wp-block-button__link {
   @apply bg-primary text-white px-4 py-2 rounded hover:bg-secondary;
+}
+
+.product-content{
+  @apply text-justify;
+}
+.product-content p{
+  @apply mb-2;
 }

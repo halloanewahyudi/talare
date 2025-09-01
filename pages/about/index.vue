@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Container> 
+    <Container>
       <UiPageHader
         :title="about?.title"
         :subtitle="about?.acf.sub_title"

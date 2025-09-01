@@ -18,7 +18,7 @@
             <h4 class="text-2xl lg:text-primary lg:text-4xl font-bold mb-3">
               {{ person.title }}
             </h4>
-            <div v-html="person.content"></div>
+            <div v-html="person.content" class="text-justify"></div>
           </div>
         </div>
       </section>

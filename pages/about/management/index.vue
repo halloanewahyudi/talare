@@ -43,6 +43,12 @@
                </div>
               
             </NuxtLink>
+
+            <NuxtLink :to="{
+                name: 'about-management-slug',
+                params: { slug: item?.slug },
+              }" class="text-sm italic group flex items-center gap-1 mt-2 text-primary"> Read More <Icon name="material-symbols-light:arrow-right-alt group-hover:translate-x-2 duration-300"></Icon> 
+              </NuxtLink>
           </div>
         </div>
 
@@ -79,6 +85,11 @@
               </div>
               
             </NuxtLink>
+             <NuxtLink :to="{
+                name: 'about-management-slug',
+                params: { slug: item?.slug },
+              }" class="text-sm italic group flex items-center gap-1 mt-2 text-primary"> Read More <Icon name="material-symbols-light:arrow-right-alt group-hover:translate-x-2 duration-300"></Icon> 
+              </NuxtLink>
           </div>
         </div>
       </div>

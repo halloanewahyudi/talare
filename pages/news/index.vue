@@ -79,7 +79,7 @@ const {data:news , status} = await useApi("/content/news")
       v-model="searchQuery"
       @input="searchPosts"
       type="text"
-      placeholder="Cari disini.."
+      placeholder="Find here.."
       class="w-full rounded-full py-2 px-5 border focus:outline-none focus:ring-2 focus:ring-neutral-500/30 focus:ring-offset-2"
     />
     <icon :name="loading ? 'line-md:loading-twotone-loop' : 'simple-line-icons:magnifier'" class="absolute top-1/2 -translate-y-1/2 right-4 text-xl" />

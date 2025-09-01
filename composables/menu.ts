@@ -1,11 +1,11 @@
 export const useMenu = () => {
 
-  const {productMenu} = useProductMenu();
+  const { productMenu } = useProductMenu();
   const menus = ref([
     {
       name: 'Home',
       path: '/',
-    
+
     },
     {
       name: 'About',
@@ -13,53 +13,54 @@ export const useMenu = () => {
       children: [
         {
           name: 'About Talare',
-          path: '/about',
+          path: '/about'
         },
         {
           name: 'Vision & Mission',
-          path: '/about/vision-mission',
+          path: '/about/vision-mission'
         },
         {
           name: 'Why Choose Us',
-          path: '/about/why-choose-us',
+          path: '/about/why-choose-us'
         },
-         {
+        {
           name: 'What We Do',
-          path: '/about/what-we-do',
+          path: '/about/what-we-do'
         },
         {
           name: 'Our Management',
-          path: '/about/management',
+          path: '/about/management'
         },
         {
           name: 'Our Team',
-          path: '/about/team',
+          path: '/about/team'
         }
       ]
-    },
-     {
-      name: 'Products',
-      children:[
-
-        {
-          name:'Facultative Reinsurance',
-          path: productMenu.value[0].path
-        },
-        {
-          name:'Treaty Reinsurance',
-          path:'/treaty'
-        },
-        {
-          name:'Joint Placement',
-          path:'/joint-placement'
-        }
-      ],
-      
     },
     {
       name: 'Services',
       path: '/services',
     },
+    {
+      name: 'Products',
+      path: '#',
+      children: [
+          {
+          name: 'Treaty Reinsurance',
+          path: '/treaty'
+        },
+        {
+          name: 'Facultative Reinsurance',
+          path: productMenu.value[0].path
+        },    
+        {
+          name: 'Joint Placement',
+          path: '/joint-placement'
+        }
+      ],
+
+    },
+
     {
       name: 'Clients & Strategic Partners',
       path: '/clients',
@@ -69,7 +70,11 @@ export const useMenu = () => {
       path: '/news',
     },
     {
-      name: 'Contact',
+      name: 'Gallery',
+      path: '/gallery',
+    },
+    {
+      name: 'Contact Us',
       path: '/contact',
     },
   ])
