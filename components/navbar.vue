@@ -65,6 +65,7 @@
                     :to="child.path"
                     class="nav-link text-sm mx-2 text-white hover:text-primary"
                     no-prefetch
+                    @click="toggleDropdown(child.path)"
                   >
                     {{ child.name }}
                   </NuxtLink>
@@ -87,7 +88,7 @@
 
 <script lang="ts" setup>
 const { menus } = useMenu();
-
+const router = useRouter();
 // State
 const isSticky = ref(false);
 const isVisible = ref(true);
@@ -122,6 +123,9 @@ onMounted(() => {
 
   window.addEventListener("scroll", handleScroll, { passive: true });
   handleScroll();
+
+
+
 });
 
 // Dropdown toggle
@@ -135,6 +139,13 @@ const { progress } = useLoadingIndicator({
     (2 / Math.PI * 100) * Math.atan((elapsed / duration) * 100 / 50)
   
 });
+
+// hidden sub menu 
+const toggleDropdown = (path: string) => {
+  setTimeout(() => {
+    router.go(path);
+  }, 100);
+};  
 </script>
 
 <style scoped>

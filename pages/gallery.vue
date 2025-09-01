@@ -46,7 +46,7 @@
 
       <div
         ref="popupRef"
-        class="max-w-[480px] w-full max-h-[480px] h-full rounded-xl overflow-hidden bg-white p-2 shadow-2xl"
+        class=" h-full rounded-xl overflow-hidden bg-white p-2 shadow-2xl"
       >
         <img
           :src="gallery?.acf?.gallery[selectedIndex]?.url"
