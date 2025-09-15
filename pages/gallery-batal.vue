@@ -112,6 +112,8 @@
 
 <script lang="ts" setup>
 const { $gsap } = useNuxtApp();
+
+const route = useRoute();
 const { data: gallery, status } = await useApi("/content/gallery");
 
 const selectedIndex = ref<number | null>(null);
