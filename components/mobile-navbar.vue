@@ -10,6 +10,7 @@
           class="h-7 lg:h-12 shrink-0 object-contain"
         />
       </NuxtLink>
+         <img src="/img/logo-ojk-1.png" alt="logo" class="h-5 lg:h-10 shrink-0 object-contain" />
       <button @click="mobileMenu = !mobileMenu" class="lg:hidden">
         <Icon name="line-md:close-to-menu-alt-transition" class="text-3xl text-primary" />
       </button>
