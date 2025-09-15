@@ -68,18 +68,39 @@
 </div>
 
 
-        <div class="flex items-center gap-3">
-         
-          <div v-for="(item, index) in gallery?.acf?.gallery.slice(0, 8)" :key="index">
-            <img
-              :src="item?.url"
-              :alt="item?.title"
-              class="h-20 w-20 object-cover rounded-xl cursor-pointer border-2 transition"
-              :class="selectedIndex === index ? 'border-primary shadow-xl' : 'border-transparent'"
-              @click="selectItem(index)"
-            />
-          </div>
-        </div>
+      <div class="flex items-center gap-3">
+  <!-- Tombol prev -->
+  <button
+    v-if="totalThumbPages > 1"
+    @click="prevThumbPage"
+    class="p-2 w-10 h-10 bg-gray-200 rounded-full"
+  >
+    <icon name="line-md:arrow-left" />
+  </button>
+
+  <!-- Thumbnails sesuai halaman -->
+  <div class="flex items-center gap-3">
+    <div v-for="(item, index) in visibleThumbnails" :key="index">
+      <img
+        :src="item?.url"
+        :alt="item?.title"
+        class="h-20 w-20 object-cover rounded-xl cursor-pointer border-2 transition"
+        :class="selectedIndex === index + thumbPage * pageSize ? 'border-primary shadow-xl' : 'border-transparent'"
+        @click="selectItem(index + thumbPage * pageSize)"
+      />
+    </div>
+  </div>
+
+  <!-- Tombol next -->
+  <button
+    v-if="totalThumbPages > 1"
+    @click="nextThumbPage"
+    class="p-2 w-10 h-10 bg-gray-200 rounded-full"
+  >
+    <icon name="line-md:arrow-right" />
+  </button>
+</div>
+
       </div>
 
       <button @click="nextImage">
@@ -95,6 +116,20 @@ const { data: gallery, status } = await useApi("/content/gallery");
 
 const selectedIndex = ref<number | null>(null);
 const popupRef = ref<HTMLElement | null>(null);
+
+const pageSize = 8;
+const thumbPage = ref(0);
+
+const totalThumbPages = computed(() => {
+  return Math.ceil((gallery.value?.acf?.gallery?.length || 0) / pageSize);
+});
+
+const visibleThumbnails = computed(() => {
+  if (!gallery.value) return [];
+  const start = thumbPage.value * pageSize;
+  const end = start + pageSize;
+  return gallery.value.acf.gallery.slice(start, end);
+});
 
 const animateJelly = () => {
   if (!popupRef.value) return;
@@ -129,9 +164,18 @@ const prevImage = () => {
 
 const nextImage = () => {
   if (selectedIndex.value === null) return;
-  selectedIndex.value = (selectedIndex.value + 1) % gallery.value.acf.gallery.length;
+  selectedIndex.value =
+    (selectedIndex.value + 1) % gallery.value.acf.gallery.length;
   nextTick(() => animateJelly());
 };
+
+const prevThumbPage = () => {
+  thumbPage.value = (thumbPage.value - 1 + totalThumbPages.value) % totalThumbPages.value;
+};
+const nextThumbPage = () => {
+  thumbPage.value = (thumbPage.value + 1) % totalThumbPages.value;
+};
 </script>
+
 
 <style scoped></style>
