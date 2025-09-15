@@ -43,25 +43,39 @@
         <icon name="line-md:arrow-left" class="text-3xl text-primary" />
       </button>
       <div class="flex flex-col gap-4">
-        <div
-          ref="popupRef"
-          class="h-full aspect-video max-h-[400px] mx-auto rounded-xl overflow-hidden bg-white p-2 shadow-2xl"
-        >
-          <img
-            :src="gallery?.acf?.gallery[selectedIndex]?.url"
-            :alt="gallery?.acf?.gallery[selectedIndex]?.title"
-            class="h-full w-full object-cover rounded-xl"
-          />
-          <span class="absolute bottom-4 left-4 text-white">{{
-            gallery?.acf?.gallery[selectedIndex]?.title
-          }}</span>
-        </div>
-        <div class="flex items-center gap-3"> <!-- maksimal loop  8 item -->
-          <div v-for="(item, index) in gallery?.acf?.gallery" :key="index">
+<div
+  ref="popupRef"
+  class="relative h-full aspect-video max-h-[400px] mx-auto rounded-xl overflow-hidden border-2 border-primary bg-white "
+>
+  <!-- LAYER 1: Background blur -->
+  <img
+    :src="gallery?.acf?.gallery[selectedIndex]?.url"
+    alt=""
+    class="absolute inset-0 w-full h-full object-cover blur-lg opacity-80"
+  />
+
+  <!-- LAYER 2: Gambar utama -->
+  <img
+    :src="gallery?.acf?.gallery[selectedIndex]?.url"
+    :alt="gallery?.acf?.gallery[selectedIndex]?.title"
+    class="relative z-10 h-full w-full object-contain"
+  />
+
+  <!-- LAYER 3: Judul -->
+  <span class="absolute bottom-4 left-4 text-white z-20">
+    {{ gallery?.acf?.gallery[selectedIndex]?.title }}
+  </span>
+</div>
+
+
+        <div class="flex items-center gap-3">
+         
+          <div v-for="(item, index) in gallery?.acf?.gallery.slice(0, 8)" :key="index">
             <img
               :src="item?.url"
               :alt="item?.title"
-              class="h-20 w-20 object-cover rounded-xl"
+              class="h-20 w-20 object-cover rounded-xl cursor-pointer border-2 transition"
+              :class="selectedIndex === index ? 'border-primary shadow-xl' : 'border-transparent'"
               @click="selectItem(index)"
             />
           </div>
