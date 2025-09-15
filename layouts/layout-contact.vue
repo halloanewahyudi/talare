@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Navbar class="absolute w-full" />
+    <Navbar class="absolute w-full hidden lg:block" />
+    <MobileNavbar class="lg:hidden" />
 <slot />
     <Footer/>
   </div>

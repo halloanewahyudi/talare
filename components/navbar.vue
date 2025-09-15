@@ -5,7 +5,7 @@
   <!-- Navbar -->
   <header
     ref="navbarRef"
-    class="fixed top-0 left-0 w-full z-50 transition-transform duration-300 "
+    class="fixed top-0 left-0 w-full z-50 transition-transform duration-300 hidden lg:block"
     :class="isVisible ? 'translate-y-0 bg-white/80 backdrop-blur-2xl' : '-translate-y-full lg:top-12'"
   >
     <!-- Top Container -->
@@ -19,16 +19,14 @@
         </NuxtLink>
 
         <img src="/img/logo-ojk-1.png" alt="logo" class="h-5 lg:h-10 shrink-0 object-contain" />
-        <button @click="mobileMenu = !mobileMenu" class="lg:hidden">
-          <Icon name="line-md:close-to-menu-alt-transition" class="text-3xl text-primary" />
-        </button>
+
       </div>
     </Container>
 
     <!-- Sticky nav content -->
     <div
       class="navbar lg:block duration-300"
-      :class="[mobileMenu ? 'block opacity-100' : 'hidden', isSticky ? '' : '']"
+     
     >
       <Container>
         <nav

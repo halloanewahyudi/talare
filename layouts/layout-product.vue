@@ -1,6 +1,7 @@
 <template>
   <div >
-  <Navbar />
+  <Navbar class="hidden lg:block" />
+  <MobileNavbar class="lg:hidden" />
   <div class="min-h-screen">
     <Container>
    <!--  <UiPageHader title="Products" subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit." bg="./img/talare-slider1.jpg" class="mt-10"/> -->

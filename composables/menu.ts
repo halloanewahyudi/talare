@@ -3,11 +3,13 @@ export const useMenu = () => {
   const { productMenu } = useProductMenu();
   const menus = ref([
     {
+      id:'home',
       name: 'Home',
       path: '/',
 
     },
     {
+      id:'about',
       name: 'About',
       path: '#',
       children: [
@@ -38,10 +40,12 @@ export const useMenu = () => {
       ]
     },
     {
+      id:'services',
       name: 'Services',
       path: '/services',
     },
     {
+      id:'products',
       name: 'Products',
       path: '#',
       children: [
@@ -62,18 +66,22 @@ export const useMenu = () => {
     },
 
     {
+      id:'clients',
       name: 'Clients & Strategic Partners',
       path: '/clients',
     },
     {
+      id:'news',
       name: 'News',
       path: '/news',
     },
     {
+      id:'gallery',
       name: 'Gallery',
       path: '/gallery',
     },
     {
+      id:'contact',
       name: 'Contact Us',
       path: '/contact',
     },
