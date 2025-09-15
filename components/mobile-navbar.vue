@@ -58,12 +58,12 @@
             <transition name="fade-slide" mode="out-in">
               <ul
                 v-if="menu.children && openMenu === menu.id"
-                class="p-4 bg-gray-50 rounded-xl mt-2"
+                class="mt-2 pl-2"
               >
                 <li v-for="child in menu.children" :key="child.path">
                   <NuxtLink
                     :to="child.path"
-                    class="text-sm hover:text-primary"
+                    class="text-sm"
                     @click="closeMenu"
                   >
                     {{ child.name }}
