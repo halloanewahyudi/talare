@@ -18,7 +18,7 @@
           <img src="/img/logo-transparent.png" alt="logo" class="h-7 lg:h-12 shrink-0 object-contain" />
         </NuxtLink>
 
-        <img src="/img/logo-ojk-1.png" alt="logo" class="h-5 lg:h-10 shrink-0 object-contain" />
+        <img src="/img/logo-ojk-lg.png" alt="logo" class="h-5 lg:h-10 shrink-0 object-contain" />
 
       </div>
     </Container>
