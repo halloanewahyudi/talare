@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: "Contact Form <noreply@tala-re.com>", // pastikan domain sudah terverifikasi di Resend
+      from: "Contact Form <noreply@talare.co.id>", // pastikan domain sudah terverifikasi di Resend
       to: [body.to],
       subject: body.subject,
       html: body.message,
