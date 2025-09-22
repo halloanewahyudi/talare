@@ -33,7 +33,7 @@
             <img
               :src="home?.acf?.a_brief_of_talare?.image?.url"
               alt=""
-              class="flex rounded-xl lg:absolute lg:w-[800px] lg:h-[400px] lg:left-0 lg:-top-20 object-cover"
+              class="flex rounded-xl lg:absolute lg:w-[600px] lg:h-[400px] lg:left-0 lg:-top-20 object-cover"
             />
           </div>
    <GsapFadeUp>

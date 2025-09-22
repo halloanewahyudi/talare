@@ -38,7 +38,7 @@
               </div>
 
               <div
-                class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 justify-center items-center divide-gray-200"
+                class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center text-center divide-gray-200"
               >
                 <div v-for="(item, index) in currentTabData.national" :key="item.id">
                   <img
@@ -55,7 +55,7 @@
                 International
               </div>
               <div
-                class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 justify-center items-center divide-gray-200"
+                class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center text-center divide-gray-200"
               >
                 <div v-for="(item, index) in currentTabData.international" :key="item.id">
                   <img
@@ -71,7 +71,7 @@
 
           <div
             v-else
-            class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 justify-center items-center divide-gray-200 bg-white rounded-xl border border-gray-200"
+            class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-6 justify-center items-center text-center divide-gray-200 bg-white rounded-xl border border-gray-200"
           >
             <div v-for="(item, index) in currentTabData" :key="item.id" class="p-4">
               <img
