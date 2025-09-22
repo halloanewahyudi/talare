@@ -95,7 +95,7 @@ const {data:news , status} = await useApi("/content/gallery")
         </NuxtLink>
         <div class="p-5">
         <span class="text-xs text-gray-500"> <icon name="fluent:calendar-20-regular" /> {{ post.date }}</span>
-        <NuxtLink :to="`/news/${post.slug}`" class="text-sm">
+        <NuxtLink :to="`/gallery/${post.slug}`" class="text-sm">
           <h3 class="text-lg font-medium mb-3 hover:text-secondary duration-300">{{ post.title }}</h3>
         </NuxtLink>
 

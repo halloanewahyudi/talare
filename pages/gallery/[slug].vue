@@ -34,7 +34,7 @@
     <!-- POPUP -->
     <div
       v-if="selectedIndex !== null"
-      class="fixed inset-0 w-full h-full flex justify-center items-center bg-white/90 z-50"
+      class="fixed inset-0 w-full h-full  flex justify-center items-center bg-white/90 z-50"
     >
       <button @click="closePopup" class="absolute top-4 right-4">
         <icon name="line-md:close" class="text-3xl text-red-500" />
@@ -45,7 +45,7 @@
       <div class="flex flex-col gap-4">
 <div
   ref="popupRef"
-  class="relative h-full aspect-video max-h-[400px] mx-auto rounded-xl overflow-hidden border-2 border-primary bg-white "
+  class="relative h-full lg:max-h-[calc(80vh)] aspect-video  mx-auto rounded-xl overflow-hidden border-2 border-primary bg-white "
 >
   <!-- LAYER 1: Background blur -->
   <img
