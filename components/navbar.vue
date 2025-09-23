@@ -11,8 +11,7 @@
     <!-- Top Container -->
     <Container
       class="py-2 flex flex-col gap-4  "
-      :class="{ 'sticky top-0 z-50 ': isSticky }"
-    >
+      :class="{ 'sticky top-0 z-50 ': isSticky }">
       <div class="flex justify-between items-center">
         <NuxtLink to="/" class="flex items-center gap-2 z-50">
           <img src="/img/logo-transparent.png" alt="logo" class="h-7 lg:h-12 shrink-0 object-contain" />
