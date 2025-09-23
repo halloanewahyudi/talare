@@ -11,7 +11,8 @@
     <!-- Top Container -->
     <Container
       class="py-2 flex flex-col gap-4  "
-      :class="{ 'sticky top-0 z-50 ': isSticky }">
+      :class="{ 'sticky top-0 z-50 ': isSticky }"
+    >
       <div class="flex justify-between items-center">
         <NuxtLink to="/" class="flex items-center gap-2 z-50">
           <img src="/img/logo-transparent.png" alt="logo" class="h-7 lg:h-12 shrink-0 object-contain" />
@@ -121,8 +122,6 @@ onMounted(() => {
   window.addEventListener("scroll", handleScroll, { passive: true });
   handleScroll();
 
-
-
 });
 
 // Dropdown toggle
@@ -140,7 +139,8 @@ const { progress } = useLoadingIndicator({
 // hidden sub menu 
 const toggleDropdown = (path: string) => {
   setTimeout(() => {
-    router.go(path);
+   //  router.go(path);
+   console.log(router.go)
   }, 100);
 };  
 </script>
